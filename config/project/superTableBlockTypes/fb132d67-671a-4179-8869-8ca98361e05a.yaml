@@ -1,4 +1,4 @@
-changedFieldIndicator: null
+changedFieldIndicator: 1139396193
 field: ab98011d-e66d-4a2d-a51b-a20e625f4fca # Home Accommodations
 fieldLayouts:
   3d120703-3508-4019-b2ab-d1d0f1086f0c:
@@ -68,7 +68,7 @@ fields:
     searchable: true
     settings:
       contentTable: '{{%matrixcontent_accommodations}}'
-      maxBlocks: 3
+      maxBlocks: 4
       minBlocks: null
       propagationKeyFormat: null
       propagationMethod: all

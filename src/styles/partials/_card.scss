@@ -98,3 +98,79 @@
     padding: .75rem 1.5rem .75rem 1.5rem;
   }
 }
+
+.c-card--alt {
+  width: 100%;
+  
+}
+
+.c-card--alt__inner {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .c-card--alt__headline {
+      text-decoration: underline;
+    }
+    .c-card--alt__arrow {
+      left: calc(100% - 60px);
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 60%, rgba(0, 0, 0, 1) 100%);
+  }
+}
+
+.c-card--alt__image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.c-card--alt__content {
+  position: absolute;
+  left: $padding-content-sm;
+  bottom: $padding-content-sm;
+  color: $white;
+  z-index: 2;
+}
+
+.c-card--alt__headline {
+  color: $white;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.c-card--alt__btn {
+  margin-top: 10px;
+}
+
+.c-card--alt__arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 90%;
+  transition: all 200ms ease-in-out;
+  border: 1px solid $white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+}

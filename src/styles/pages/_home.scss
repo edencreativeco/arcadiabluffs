@@ -9,11 +9,9 @@
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
 	padding: 100px 0;
 	position: relative;
-	text-align: center;
 
 	&:before {
 		content: '';
@@ -67,10 +65,10 @@
 	
 .c-home-hero__headline {
 	font-size: 30px;
-  line-height: 40px;
+  	line-height: 40px;
 	color: $white;
 	max-width: 600px;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 
 	@include mq($from: sm) {
 		font-size: 40px;
@@ -88,26 +86,21 @@
 // =============================================================================
 
 .o-home-section {
-  display: flex;
-	flex-wrap: wrap;
-  align-items: center;
-  
+	@extend %md-section;
+	background: $white;
+}
+
+.o-home-section--sand {
+	@extend %md-section;
+	background: $wild-sand;
 }
 
 .o-home-section__content {
 	width: 100%;
-  	padding: $padding-content-md;
+  	padding: 0  $padding-content-md $padding-content-md $padding-content-md;
 	text-align: center;
 	max-width: 1200px;
 	margin: 0 auto;
-
-	// @include mq($from: tweener) {
-  	// width: 35%;
-	// }
-
-	@include mq($from: l) {
-  	padding: $padding-content-md * 2;
-	}
 }
 
 .o-home-section__cards {
@@ -223,7 +216,7 @@
 
 .o-home-accommodations {
   @extend %md-section;
-	background: $wild-sand;
+	background: $white;
 }
 
 .o-home-accommodations__wrapper {
@@ -239,26 +232,17 @@
 }
 
 .o-home-accommodations__cards {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: $padding-content-sm;
+
+	@include mq($from: m) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 .o-home-accommodations__card {
 	width: 100%;
-
-	&:not(:last-child) {
-		margin-bottom: 10px;
-	}
-
-	@include mq($from: m) {
-		width: calc(33% - 5px);
-
-		&:not(:last-child) {
-			margin-bottom: 0;
-		}
-	}
-
 }
 
 .o-home-accommodations__btns {

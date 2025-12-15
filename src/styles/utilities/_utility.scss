@@ -6,6 +6,8 @@
 	margin-right: auto;
 	padding-left: $padding-content-sm;
 	padding-right: $padding-content-sm;
+	width: 1700px;
+	max-width: 100%;
 	@include mq($from: m) {
 		padding-left: $padding-content-md;
 		padding-right: $padding-content-md;

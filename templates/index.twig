@@ -42,12 +42,14 @@
         {% endif %}
         
       </div>
-      <div class="o-home-section__cards">
-        {% for item in courses.courses.all() %}
-          <div class="o-home-section__card">
-            {% include '_partials/card.twig' %}
-          </div>
-        {% endfor %}
+      <div class="o-wrapper">
+        <div class="o-home-section__cards">
+          {% for item in courses.courses.all() %}
+            <div class="o-home-section__card">
+              {% include '_partials/card.twig' %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
       {# {% if courses.video|length %}
           <div class="c-home-video" data-modal-toggle="flyover">
@@ -85,7 +87,7 @@
       <div class="o-home-accommodations__cards">
         {% for item in accommodations.accommodations.all() %}
           <div class="o-home-accommodations__card">
-            {% include '_partials/card.twig' %}
+            {% include '_partials/card.twig' with { type: 'c-card--alt' } %}
           </div>
         {% endfor %}
       </div>
@@ -102,24 +104,26 @@
 
   {% set dining = entry.homeDining %}
   <section>
-    <div class="o-home-section">
-      <div class="o-home-section__content">
-        {% if dining.headline|length %}
-          <h2 class="c-headline c-symbol-headline c-symbol-headline--maroon">{{ dining.headline }}</h2>
-        {% endif %}
-        {% if dining.text|length %}
-          <div class="rte">{{ dining.text }}</div>
-        {% endif %}
-        {% if dining.linkData|length %}
-          <a href="{{ dining.linkData.url }}" class="cta-link">{{ dining.linkData.text }}</a>
-        {% endif %}
-      </div>
-      <div class="o-home-section__cards">
-        {% for item in dining.diningOptions.all() %}
-          <div class="o-home-section__card">
-            {% include '_partials/card.twig' %}
-          </div>
-        {% endfor %}
+    <div class="o-home-section--sand">
+      <div class="o-wrapper">
+        <div class="o-home-section__content">
+          {% if dining.headline|length %}
+            <h2 class="c-headline c-symbol-headline c-symbol-headline--maroon">{{ dining.headline }}</h2>
+          {% endif %}
+          {% if dining.text|length %}
+            <div class="rte">{{ dining.text }}</div>
+          {% endif %}
+          {% if dining.linkData|length %}
+            <a href="{{ dining.linkData.url }}" class="cta-link">{{ dining.linkData.text }}</a>
+          {% endif %}
+        </div>
+        <div class="o-home-section__cards">
+          {% for item in dining.diningOptions.all() %}
+            <div class="o-home-section__card">
+              {% include '_partials/card.twig' %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </section>
