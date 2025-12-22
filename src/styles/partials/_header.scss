@@ -72,50 +72,6 @@ body {
    }
 }
 
-// Primary Nav Styles
-.nav__menu {
-   @extend %serif;
-   letter-spacing: 1.5px;
-   text-transform: uppercase;
-   display: none;   
-   justify-content: flex-end;
-   align-items: center;
-
-   li {
-      margin-right: $padding-content-md;
-   }
-   
-   a:not(.btn) {
-      color: $charcoal;
-      position: relative;
-      display: block;
-      
-      &:before, &:after {
-         content: '';
-         width: 0;
-         height: 2px;
-         background: $red;
-         position: absolute;
-         bottom: -7px;
-         transition: width 200ms ease-in-out;
-      }
-      &:before {
-         left: 50%;
-      }
-      &:after {
-         right: 50%;
-      }
-      &.active, &:hover {
-         &:before, &:after {
-            width: 10px;
-         }
-      }
-   }
-
-   @include mq($from: l) {
-      display: flex;
-   }
-}
 
 // Secondary Nav Styles
 .nav-secondary {
@@ -275,3 +231,80 @@ body {
       display: none;
    }
 }
+
+/* NEW PRIMARY MENU */
+.nav__menu,
+.nav__menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__menu a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Root menu */
+.nav__menu {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Top-level items */
+.nav__menu > li {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  /* Hide submenus */
+  .nav__menu .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 15px;
+      min-width: 220px;
+      background: #fff;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+
+      transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .submenu-image {
+      position: absolute;
+      right: 100%;
+      top: 0;
+      height: 100%;
+      width: 150px;
+      object-fit: cover;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+  }
+
+  /* Show on hover or active */
+  .nav__menu > li:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Submenu items */
+  .nav__menu .submenu li a {
+    padding: 5px 10px;
+  }
+
+  /* Chevron */
+  .nav__menu > li.has-children > a::after {
+    content: "▾";
+    margin-left: 0.4rem;
+    font-size: 0.75em;
+  }
+}
+
+
+
+

@@ -1,4 +1,4 @@
-dateModified: 1766418978
+dateModified: 1766436750
 elementSources:
   SproutForms_Entry:
     -
@@ -283,6 +283,7 @@ meta:
     8b26cdc7-ea7e-4875-9eb9-ed4bbac17bd0: Body # Body
     8bd73b98-da2c-4be5-8469-9c6bbf19a909: Image # Image
     8c62cfca-5a41-451c-9f8e-1272591144b7: Standard # Standard
+    8ce047aa-818d-4f89-8b27-ee67e4018da1: 'Navigation Link' # Navigation Link
     8d3a52a0-3ef6-4c6f-a812-1b9972d643d9: 'Apply Callout' # Apply Callout
     8d55db04-8897-450d-a5f2-625d80a8eab2: 'Call To Actions' # Call To Actions
     8e05d955-2d0c-460c-ae59-bc51e9877ea8: CTA # CTA
@@ -395,6 +396,7 @@ meta:
     087746ce-cab7-47d4-ae7d-7b653a9bbff3: General # General
     87920f6c-d778-4955-a9eb-3ffbe093bc7e: 'Accommodations Headline' # Accommodations Headline
     88498e7c-15c7-4de4-9b99-3dd79ea914e1: 'Details List' # Details List
+    91430bb0-e893-4ae9-961b-648284afcc92: 'Main Navigation' # Main Navigation
     95930b1a-46ab-472b-bbc8-08004eee0333: Link # Link
     96026f6b-4401-4546-b7e2-9549a9ecbf38: Video # Video
     98628ef5-a914-449f-95e6-0524f6aad125: Description # Description
@@ -402,6 +404,7 @@ meta:
     170684cb-0759-412d-8fe9-a4b049a2cb63: Awards # Awards
     441642ef-65bb-460b-bf11-9a7b5014942b: Contact # Contact
     669373c9-7338-40ff-b910-b4e164a5c4e4: Description # Description
+    0942620b-34cc-4de4-8e29-b884454cdf06: 'Navigation Image' # Navigation Image
     961562fa-ae3d-4a9d-b304-43d727329d53: 'Private Event Options' # Private Event Options
     11296663-245b-4f30-a14a-3c31b3690349: Course # Course
     11950123-d1fd-4f74-b0cd-016b75c75cb9: Metadata # Metadata
@@ -469,6 +472,7 @@ meta:
     ce1d1e5c-5010-49e7-a946-99d7621d108f: 'Rates List' # Rates List
     ce962529-a5c5-4d53-8330-22c3a6d5d6da: Awards # Awards
     cfc96944-eb9c-41e9-a313-1ac2fac8eec2: Table # Table
+    d00fb412-e3fa-4f13-b48b-7cd0d3b132c3: Default # Default
     d02a9c6c-376c-4ddf-b819-ab59d7e1afc7: 'User Photos' # User Photos
     d08f7f35-3977-48a8-8fea-d79697d19e1e: Text # Text
     d094cea2-a9d5-492a-9663-e179d0878780: Email # Email
