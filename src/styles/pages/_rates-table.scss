@@ -1,3 +1,59 @@
+// Desktop by default
+.rates-table__course-select-wrap,
+.rates-table__mobile-columns,
+.rates-table__mobile-table {
+  display: none;
+}
+
+// Desktop: show tabs and full table
+.rates-table__tabs,
+.rates-table__desktop-table {
+  display: block;
+}
+
+@include mq($from: m) {
+  // Mobile: show dropdown, arrows, and single-col table
+  .rates-table__course-select-wrap,
+  .rates-table__mobile-columns,
+  .rates-table__mobile-table {
+    display: block;
+  }
+  // Mobile: hide tabs and full table
+  .rates-table__tabs,
+  .rates-table__desktop-table {
+    display: none;
+  }
+}
+.rates-table__mobile-columns-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $maroon;
+
+    button {
+        @include buttonReset();
+        background: $darkMaroon;
+        width: 60px;
+        height: 60px;
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.rates-table__mobile-columns-label {
+    color: $white;
+    font-family: $sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
 .rates-table__tabs-wrap {
   margin: 0;
 }
@@ -137,4 +193,60 @@
 .rates-table__footnotes {
     margin: $padding-content-md 0;
     list-style-position: inside;
+}
+
+.rates-table__course-select-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: $padding-content-sm;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rates-table__course-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+    padding: 15px 30px 15px 12px;
+
+    border: 1px solid #ccc;        /* gray border */
+    background-color: #fff;        /* white background */
+    color: $red;                   /* red text */
+    border-radius: 0;
+    cursor: pointer;
+    font-family: $sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Custom gray chevron */
+.rates-table__course-select-wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 6px;
+  height: 6px;
+
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+}
+
+/* Optional hover/focus states */
+.rates-table__course-select:hover {
+  border-color: #999;
+}
+
+.rates-table__course-select:focus {
+  outline: none;
+  border-color: #999;
 }

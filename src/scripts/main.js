@@ -498,7 +498,127 @@ function recaptchaCallback() {
 
   setHeaderHeight();
   // additional event listeners
+
   window.addEventListener("resize", () => {
     setHeaderHeight();
   });
+
+  // Mobile Rates Table UI Logic
+  (function () {
+    function isMobile() {
+      return window.matchMedia("(max-width: 900px)").matches;
+    }
+
+    function updateMobileTable($tabContent) {
+      var $desktopTable = $tabContent.find(".rates-table__desktop-table");
+      var $mobileTable = $tabContent.find("[data-mobile-table]");
+      var $label = $tabContent.find("[data-mobile-label]");
+      var $prev = $tabContent.find("[data-mobile-prev]");
+      var $next = $tabContent.find("[data-mobile-next]");
+
+      var $thead = $desktopTable.find("thead tr th");
+      var $rows = $desktopTable.find("tbody tr");
+      var colCount = $thead.length;
+      var currentCol = $tabContent.data("mobile-col") || 1; // skip first col (labels)
+
+      function renderCol(colIdx) {
+        var html = '<table class="rates-table__mobile"><tbody>';
+        $rows.each(function () {
+          var $cells = $(this).find("td");
+          html += "<tr>";
+          html +=
+            '<td class="rates-table__mobile-label">' +
+            $cells.eq(0).html() +
+            "</td>";
+          html +=
+            '<td class="rates-table__mobile-value">' +
+            $cells.eq(colIdx).html() +
+            "</td>";
+          html += "</tr>";
+        });
+        html += "</tbody></table>";
+        $mobileTable.html(html);
+        $label.text($thead.eq(colIdx).text());
+        $tabContent.data("mobile-col", colIdx);
+        $prev.prop("disabled", colIdx === 1);
+        $next.prop("disabled", colIdx === colCount - 1);
+      }
+
+      $prev.off("click").on("click", function () {
+        if (currentCol > 1) {
+          currentCol--;
+          renderCol(currentCol);
+        }
+      });
+      $next.off("click").on("click", function () {
+        if (currentCol < colCount - 1) {
+          currentCol++;
+          renderCol(currentCol);
+        }
+      });
+
+      renderCol(currentCol);
+    }
+
+    function showTab(tabKey) {
+      $(".rates-table .tabs__content").removeClass("active");
+      $('.rates-table .tabs__content[data-content="' + tabKey + '"]').addClass(
+        "active"
+      );
+    }
+
+    function handleMobileUI() {
+      if (!isMobile()) {
+        $(".rates-table__desktop-table").show();
+        $(
+          ".rates-table__mobile-columns, .rates-table__mobile-table, .rates-table__course-select-wrap"
+        ).hide();
+        $(".rates-table__tabs").show();
+        return;
+      }
+      $(".rates-table__desktop-table").hide();
+      $(
+        ".rates-table__mobile-columns, .rates-table__mobile-table, .rates-table__course-select-wrap"
+      ).show();
+      $(".rates-table__tabs").hide();
+
+      // Show the selected course tab
+      var tabKey = $(".rates-table__course-select").val();
+      showTab(tabKey);
+
+      // Render the mobile table for the active tab
+      var $tabContent = $(
+        '.rates-table .tabs__content[data-content="' + tabKey + '"]'
+      );
+      updateMobileTable($tabContent);
+    }
+
+    // Course dropdown change
+    $(document).on("change", ".rates-table__course-select", function () {
+      var tabKey = $(this).val();
+      showTab(tabKey);
+      var $tabContent = $(
+        '.rates-table .tabs__content[data-content="' + tabKey + '"]'
+      );
+      updateMobileTable($tabContent);
+    });
+
+    // On tab show (desktop), reset mobile col index
+    $(document).on("click", ".rates-table__link", function (e) {
+      if (isMobile()) return;
+      e.preventDefault();
+      var tabKey = $(this).data("tab");
+      showTab(tabKey);
+    });
+
+    // On resize, re-init mobile UI
+    $(window).on("resize", function () {
+      handleMobileUI();
+    });
+
+    // On page load
+    $(function () {
+      handleMobileUI();
+    });
+  })();
 })(window, document);
