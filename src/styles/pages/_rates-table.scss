@@ -1,0 +1,140 @@
+.rates-table__tabs-wrap {
+  margin: 0;
+}
+
+.rates-table__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: $padding-content-sm;
+  padding: 0;
+  list-style: none;
+}
+
+.rates-table__tab {
+  margin: 0;
+}
+
+.rates-table__link {
+    color: $maroon;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 0;
+    padding: 0;
+    height: auto;
+}
+
+.rates-table__link.active,
+.rates-table__link:focus,
+.rates-table__link:hover {
+  color: $red;
+  border-bottom: 1px solid $red;
+  background: transparent;
+}
+
+.rates-table__tabs .rates-table__tab:not(:last-child) .rates-table__link {
+  border-right: 0
+}
+
+.rates-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.rates-table thead tr {
+  
+  color: #fff;
+}
+
+.rates-table th,
+.rates-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+}
+
+.rates-table th:not(:first-child) {
+    font-family: $sans;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    background: #6b2c2f;
+    padding: 15px 12px
+}
+
+.rates-table tbody tr:nth-child(even) {
+  background: #FFFFFF;
+}
+
+.rates-table tbody tr:nth-child(odd) {
+  background: #F5F5F5;
+}
+
+
+.rates-table td {
+  text-align: center;
+}
+.rates-table tr td:first-child {
+  text-align: left;
+ 
+}
+
+.rates-table tr:nth-child(odd) td:first-child {
+    background: #EBEBEB;
+}
+
+.rates-table tr:nth-child(even) td:first-child {
+    background: #F5F5F5;
+}
+
+@media (max-width: 900px) {
+  .rates-table__tabs-wrap {
+    max-width: 100%;
+  }
+  .rates-table table {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .rates-table__tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .rates-table__link {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  .rates-table table,
+  .rates-table th,
+  .rates-table td {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.3rem;
+  }
+}
+
+.rates-table .tabs__content {
+    padding: 0;
+}
+
+.rates-table .tabs__content table {
+    border: 1px solid #D1D1D1;
+}
+
+.rates-table__footnotes {
+    margin: $padding-content-md 0;
+    list-style-position: inside;
+}

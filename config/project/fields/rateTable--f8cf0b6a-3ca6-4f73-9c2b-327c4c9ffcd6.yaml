@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: f166e127-51d5-4ea5-9f69-0e3973d61913 # Rates
+handle: rateTable
+instructions: null
+name: 'Rate Table'
+searchable: false
+settings:
+  columnsAddRowLabel: null
+  columnsInstructions: null
+  columnsLabel: null
+  enableAlignmentColumn: false
+  enableWidthColumn: false
+  rowsAddRowLabel: null
+  rowsInstructions: null
+  rowsLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: verbb\tablemaker\fields\TableMakerField

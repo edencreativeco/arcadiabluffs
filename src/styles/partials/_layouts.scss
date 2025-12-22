@@ -46,6 +46,13 @@
 
 .main__course-landing {
     @extend %lg-section;
+    background: $white
+}
+
+.main__course-rates {
+   //  @extend %md-section;
+   padding-top: $padding-content-md;
+    background: $white
 }
 
 // 404

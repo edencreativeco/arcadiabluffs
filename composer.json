@@ -11,6 +11,7 @@
     "verbb/field-manager": "3.0.9",
     "verbb/formie": "2.2.6",
     "verbb/super-table": "3.0.16",
+    "verbb/tablemaker": "^4.0",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

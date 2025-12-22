@@ -112,6 +112,36 @@ fieldLayouts:
         name: Metadata
         uid: 98a069b7-e622-411d-9952-8e5a53fc285d
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: f8cf0b6a-3ca6-4f73-9c2b-327c4c9ffcd6 # Rate Table
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fac2a4f7-5e26-440c-b248-33143bdfb64e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fbdf3e6b-f09a-4707-b299-3b9145e7ddf8 # Rates Footnotes
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5a279b8-df01-4b69-adc4-eda73f9f1108
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'New Rates'
+        uid: b8a0eeb7-64e9-426e-882b-5a4bac8abb8d
+        userCondition: null
 handle: rates
 hasTitleField: true
 name: Rates

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9eb5f48726e57a4aa655f5818c51b15",
+    "content-hash": "4e855711926a8e44cc7d36f8e48ef45c",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -9199,6 +9199,63 @@
             "time": "2025-07-18T09:59:47+00:00"
         },
         {
+            "name": "verbb/tablemaker",
+            "version": "4.0.17",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/5251ded48aab8d5ac06529a9fa4a4e77f8967a4e",
+                "reference": "5251ded48aab8d5ac06529a9fa4a4e77f8967a4e",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0.2",
+                "verbb/base": "^2.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Table Maker",
+                "handle": "tablemaker",
+                "documentationUrl": "https://github.com/verbb/tablemaker",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/tablemaker/craft-4/CHANGELOG.md",
+                "class": "verbb\\tablemaker\\TableMaker"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\tablemaker\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                },
+                {
+                    "name": "Supercool Ltd",
+                    "homepage": "http://www.supercooldesign.co.uk/"
+                }
+            ],
+            "description": "Create customizable and user-defined table fields.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "table maker"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/tablemaker/issues?state=open",
+                "source": "https://github.com/verbb/tablemaker",
+                "docs": "https://github.com/verbb/tablemaker",
+                "rss": "https://github.com/verbb/tablemaker/commits/v2.atom"
+            },
+            "time": "2025-07-18T09:59:49+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.6.2",
             "source": {
@@ -10385,13 +10442,13 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.3"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

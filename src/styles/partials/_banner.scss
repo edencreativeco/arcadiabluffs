@@ -7,6 +7,10 @@
    position: relative;
 }
 
+.banner__course-rates {
+   height: 250px;
+}
+
 .banner__headline {
    @extend %symbol-headline;
    @extend %symbol-headline--white;

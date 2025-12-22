@@ -1,4 +1,4 @@
-dateModified: 1765825365
+dateModified: 1766418978
 elementSources:
   SproutForms_Entry:
     -
@@ -231,6 +231,7 @@ meta:
     2bc9f6e5-515f-41d6-8c72-a457d3bad7a0: 'Accommodations Overview' # Accommodations Overview
     2c18936f-5777-4b43-9390-20d3b4f26d51: Metadata # Metadata
     2cbe1637-1cb0-4d03-a7f0-61e14788e974: Image # Image
+    2d72ecbd-ef65-4454-9884-b15eada1cb49: 'Header Column' # Header Column
     2de0d27e-44cc-4a0b-b5b3-4e9537340946: Default # Default
     2e0e521e-50dc-4fc4-b923-0360760a0c28: Text # Text
     2e89d38a-eaec-4b2b-943f-d94ba49050d0: Headline # Headline
@@ -272,6 +273,7 @@ meta:
     7a261b1e-d387-4b69-aa5b-4a21ed282daf: Body # Body
     7b3e1dd7-7c27-4a5a-839f-8b3f368349ef: Awards # Awards
     7bbf65b1-050d-451a-a681-13b0bbe158a1: Body # Body
+    7ca16702-9f38-4a56-b596-69cc5e8cdb90: Testing # Testing
     07d636bc-6c41-49a1-8dea-face54ffd745: 'Content Block' # Content Block
     7da47c32-f9fb-4a89-9c30-22238ac588bd: 'Slope Tables' # Slope Tables
     7df2599b-80fe-4758-8542-add1e40c5d27: 'Nav CTA' # Nav CTA
@@ -340,6 +342,7 @@ meta:
     410c8902-a790-4c5f-abc6-814d182c5d7c: Option # Option
     600b7de6-7c7a-4e9b-897f-2f2def2e9bbd: Text # Text
     682d4143-3055-4236-a72f-d8490d82a088: Description # Description
+    683e2335-935b-4dc5-b783-616901ccc493: Footnote # Footnote
     703e4c00-55cf-4b57-a7ee-db4aa2f6e060: 'Home Hero' # Home Hero
     716abbda-6a26-45cc-b52c-901463010380: 'Page Links' # Page Links
     757ad3bc-3bc1-4828-91ee-a35c04d93e82: Image # Image
@@ -484,6 +487,7 @@ meta:
     ddfbbfff-4c50-4552-a93d-78d990a5b58d: Headline # Headline
     df2fb927-6c87-4678-9950-d3a004411ca8: Courses # Courses
     e0c7ac16-2ecd-4551-8951-1928b93f8112: 'Social Links' # Social Links
+    e09eb65e-c94c-4c69-a5d6-3125c97ded07: 'Testing 2' # Testing 2
     e1b08e83-a1f1-4c82-9f19-ffa70434df89: 'Dining Options' # Dining Options
     e3dd14d9-3105-4555-b8c3-9b7328d545ec: Default # Default
     e7abf986-5d53-4c23-baa6-c6a8b574595c: State # State
@@ -510,9 +514,11 @@ meta:
     f02a0d8f-d625-405c-a782-87b045350b7f: Dining # Dining
     f1c11c8d-f329-418c-bc33-04ebbd281450: 'Live Stream' # Live Stream
     f3cf412c-f5d5-463b-b63a-7b34943ecef5: Headline # Headline
+    f5b85191-3d88-424f-a239-9efee401119c: Footnote # Footnote
     f6bcefc8-ac26-490c-a830-4863fd39731d: Phone # Phone
     f6e6587a-95e2-41ba-9aac-8dce148d0af5: 'Intro Block' # Intro Block
     f6f57ddb-d979-455a-8803-923779a0aece: 'Accommodation Pricing' # Accommodation Pricing
+    f8cf0b6a-3ca6-4f73-9c2b-327c4c9ffcd6: 'Rate Table' # Rate Table
     f9d54a63-f4b4-46a3-9822-b08270fddf91: 'Home Courses' # Home Courses
     f19fa97c-7a36-4123-bc74-ed3e6b4f2c29: 'Hero Video' # Hero Video
     f32f9a29-42b9-4309-8915-00f75901e293: Header # Header
@@ -526,6 +532,7 @@ meta:
     fa18f022-c31d-4657-8393-23057ca360d1: Headline # Headline
     fbbd0fba-c1f3-4450-a63f-4ff62a510f01: News # News
     fbd9a4ad-7fd5-495b-8367-17a73f5b8356: 'Accommodation Layout' # Accommodation Layout
+    fbdf3e6b-f09a-4707-b299-3b9145e7ddf8: 'Rates Footnotes' # Rates Footnotes
     fbf63f47-0d11-40d0-9889-18017e89451a: Link # Link
     fc68f54b-60ab-4251-8ec9-15ea9b776eef: 'Street Address 1' # Street Address 1
     fd52f2bc-9e8e-4025-9502-fab5a89e68ae: 'Arcadia Bluffs Address' # Arcadia Bluffs Address
@@ -948,6 +955,10 @@ plugins:
     licenseKey: null
     schemaVersion: 3.0.0
     settings: null
+  tablemaker:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
 system:
   edition: pro
   live: true

@@ -13,52 +13,109 @@
 	{% include '_partials/subpage-menu' %}
 
 	<main class="main main__{{ template }}" role="main">
+    {% set rateEntries = craft.entries()
+  .rateTable(':notempty:')
+  .id('not ' ~ entry.id)
+  .all()
+%}
 
-		<section class="rates-overview">
-      <div class="rates__pricing-wrap">
-        <div class="rates__pricing">
-          <h1 class="rates__pricing-headline">{{ entry.ratesHeadline|length ? entry.ratesHeadline : 'Rates' }} <span class="rates__pricing-label">Select Your Visiting Date Below</span></h1>
-          <div class="pricing__tabs-wrap">
-            <ul class="pricing__tabs tabs">
-              {% for block in entry.rates %}
-                <li class="pricing__tab tab">
-                  <a href="#" data-tab="{{ loop.index }}" class="pricing__link tabs__link {% if loop.first %}active{% endif %}">{{ block.tabText }}</a>
-                </li>
+ <h1 class="rates__pricing-headline">{{ entry.ratesHeadline|length ? entry.ratesHeadline : 'Rates' }} </h1>
+
+<section class="rates-table">
+  <div class="rates-table__tabs-wrap">
+    <ul class="rates-table__tabs tabs">
+      {# Current entry tab #}
+      {% if entry.rateTable.table|length %}
+        <li class="rates-table__tab tab">
+          <a href="#" data-tab="current" class="rates-table__link tabs__link active">{{ entry.parent.title ?? entry.title }}</a>
+        </li>
+      {% endif %}
+      
+      {# Other entries tabs #}
+      {% for rateEntry in rateEntries %}
+        <li class="rates-table__tab tab">
+          <a href="#" data-tab="{{ loop.index }}" class="rates-table__link tabs__link">{{ rateEntry.parent.title ?? rateEntry.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    
+    {# Current entry content #}
+    {% if entry.rateTable.table|length %}
+      <div data-content="current" class="tabs__content active">
+        <table>
+          <thead>
+            <tr>
+              {% for col in entry.rateTable.columns %}
+                <th>
+                  {{ col.heading }}
+                </th>
               {% endfor %}
-            </ul>
-            {% for block in entry.rates %}
-              <div data-content="{{ loop.index }}" class="tabs__content {% if loop.first %}active{% endif %}">
-                <dl class="pricing__list">
-                  {% for row in block.pricingTable %}
-                    <dt class="pricing__list-label">{{ row.label }}</dt>
-                    <dd class="pricing__list-price">{{ row.price }}</dd>
-                  {% endfor %}
-                </dl>
-                {% if block.pricingFooter | length %}
-                  <ul class="pricing__list-footer">
-                    {% for row in block.pricingFooter %}
-                      <li>{{ row.comment }}</li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-        {# {% if entry.itemsToKnow|length %}
-  			  <div class="rates__notes">
-    				<h2 class="rates__notes-headline">{{ entry.itemsToKnow.headline|length ? entry.itemsToKnow.headline : 'Items to Note' }}</h2>
-    				<div class="rates__notes-content">
-              <ul>
-                {% for item in entry.itemsToKnow.items %}
-                  <li>{{ item.item }}</li>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for row in entry.rateTable.rows %}
+              <tr>
+                {% for cell in row %}
+                  <td >
+                    {{ cell }}
+                  </td>
                 {% endfor %}
-              </ul>
-    				</div>
-    			</div>
-        {% endif %} #}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% if entry.ratesFootnotes|length %}
+          <ul class="rates-table__footnotes">
+            {% for block in entry.ratesFootnotes.type('footnote') %}
+              <li>{{ block.footnote }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
-		</section>
+    {% endif %}
+    
+    {# Other entries content #}
+    {% for rateEntry in rateEntries %}
+      <div data-content="{{ loop.index }}" class="tabs__content">
+        <table>
+          <thead>
+            <tr>
+              {% for col in rateEntry.rateTable.columns %}
+                <th>
+                  {{ col.heading }}
+                </th>
+              {% endfor %}
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for row in rateEntry.rateTable.rows %}
+              <tr>
+                {% for cell in row %}
+                  <td>
+                    {{ cell }}
+                  </td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% if rateEntry.ratesFootnotes|length %}
+          <ul class="rates-table__footnotes">
+            {% for block in rateEntry.ratesFootnotes.type('footnote') %}
+              <li>{{ block.footnote }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+   
+
 
 		<section class="rates-list">
 			{% for block in entry.ratesList %}
