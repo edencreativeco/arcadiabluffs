@@ -105,14 +105,25 @@
 
 .o-home-section__cards {
 	width: 100%;
-  display: flex;
-	flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
 
-	// @include mq($from: tweener) {
-  	// width: 65%;
-	// }
+
+	@include mq($until: m) {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scroll-snap-type: x mandatory;
+		gap: 10px;
+		padding-bottom: 20px;
+		/* Hide scrollbar for Webkit */
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		/* Hide scrollbar for Firefox */
+		scrollbar-width: none;
+	}
 }
 
 .o-home-section__card {
@@ -127,6 +138,21 @@
 
 		&:not(:last-child) {
 			margin-bottom: 0;
+		}
+	}
+
+	@include mq($until: m) {
+		flex: 0 0 80%; /* Show about 1.2 cards */
+		scroll-snap-align: start;
+		width: 80vw;
+		max-width: 320px;
+		margin-right: 10px;
+		margin-bottom: 0;
+		&:not(:last-child) {
+			margin-bottom: 0;
+		}
+		&:last-child {
+			margin-right: 0;
 		}
 	}
 }
@@ -239,10 +265,34 @@
 	@include mq($from: m) {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	@include mq($until: m) {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		gap: $padding-content-sm;
+		scroll-snap-type: x mandatory;
+		padding-bottom: 20px;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		scrollbar-width: none;
+	}
 }
 
 .o-home-accommodations__card {
 	width: 100%;
+
+	@include mq($until: m) {
+		flex: 0 0 80%;
+		width: 80vw;
+		max-width: 320px;
+		scroll-snap-align: start;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 }
 
 .o-home-accommodations__btns {

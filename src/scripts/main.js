@@ -265,6 +265,120 @@ function recaptchaCallback() {
       $(".js-nav-toggle").click(function () {
         $(".nav-mobile").toggleClass("show");
       });
+      const mobileQuery = window.matchMedia("(max-width: 1100px)");
+
+      const menu = document.querySelector(".nav__menu");
+      const menuToggle = document.querySelector(".js-menu-toggle");
+      let mobileMenuEnabled = false;
+
+      function enableMobileMenu() {
+        if (mobileMenuEnabled) return;
+        mobileMenuEnabled = true;
+
+        menuToggle.addEventListener("click", toggleMenu);
+
+        // Add toggle buttons to parent items if not present
+        menu.querySelectorAll(".has-children").forEach((li) => {
+          if (!li.querySelector(".submenu-toggle")) {
+            const btn = document.createElement("button");
+            btn.className = "submenu-toggle";
+            btn.setAttribute("aria-label", "Open submenu");
+            btn.innerHTML = `<span class="submenu-toggle-icon">\
+<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\
+  <mask id=\"mask0_2249_721\" style=\"mask-type:alpha\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"20\" height=\"20\">\
+    <rect x=\"20\" y=\"20\" width=\"20\" height=\"20\" transform=\"rotate(-180 20 20)\" fill=\"#000000\"/>\
+  </mask>\
+  <g mask=\"url(#mask0_2249_721)\">\
+    <path d=\"M8.33346 5.28863L13.0449 10.0001L8.33346 14.7115L7.45534 13.8334L11.2887 10.0001L7.45534 6.16676L8.33346 5.28863Z\" fill=\"#000000\"/>\
+  </g>\
+</svg>\
+</span>`;
+            li.insertBefore(btn, li.querySelector("ul.submenu"));
+          }
+        });
+
+        // Add event listeners to toggle buttons
+        menu.querySelectorAll(".submenu-toggle").forEach((btn) => {
+          btn.addEventListener("click", openSubmenu);
+        });
+
+        // Show back button and add event listeners for mobile
+        menu.querySelectorAll(".js-submenu-back").forEach((li) => {
+          li.style.display = "block";
+          const btn = li.querySelector("button");
+          btn.addEventListener("click", closeSubmenu);
+        });
+      }
+
+      function disableMobileMenu() {
+        if (!mobileMenuEnabled) return;
+        mobileMenuEnabled = false;
+
+        menu.classList.remove("is-open");
+        menu
+          .querySelectorAll(".is-active")
+          .forEach((el) => el.classList.remove("is-active"));
+
+        menuToggle.removeEventListener("click", toggleMenu);
+
+        // Remove event listeners and remove toggle buttons
+        menu.querySelectorAll(".submenu-toggle").forEach((btn) => {
+          btn.removeEventListener("click", openSubmenu);
+          btn.parentNode.removeChild(btn);
+        });
+        // Remove event listeners and remove back buttons
+        menu.querySelectorAll(".js-submenu-back").forEach((li) => {
+          const btn = li.querySelector("button");
+          if (btn) btn.removeEventListener("click", closeSubmenu);
+          li.parentNode.removeChild(li);
+        });
+      }
+
+      function toggleMenu() {
+        menu.classList.toggle("is-open");
+        menu
+          .querySelectorAll(".is-active")
+          .forEach((el) => el.classList.remove("is-active"));
+
+        if (menu.classList.contains("is-open")) {
+          document.addEventListener("mousedown", handleOutsideClick);
+        } else {
+          document.removeEventListener("mousedown", handleOutsideClick);
+        }
+      }
+
+      function handleOutsideClick(e) {
+        // Only close if menu is open and click is outside menu or toggle
+        if (!menu.classList.contains("is-open")) return;
+        const isMenu = menu.contains(e.target);
+        const isToggle = menuToggle.contains(e.target);
+        if (!isMenu && !isToggle) {
+          menu.classList.remove("is-open");
+          menu
+            .querySelectorAll(".is-active")
+            .forEach((el) => el.classList.remove("is-active"));
+          document.removeEventListener("mousedown", handleOutsideClick);
+        }
+      }
+
+      function openSubmenu(e) {
+        e.preventDefault();
+        e.currentTarget.parentElement.classList.add("is-active");
+      }
+
+      function closeSubmenu(e) {
+        // Find the parent .has-children and remove is-active
+        let parent = e.target.closest(".has-children");
+        if (parent) parent.classList.remove("is-active");
+      }
+
+      // Initial load
+      if (mobileQuery.matches) enableMobileMenu();
+
+      // Watch resize
+      mobileQuery.addEventListener("change", (e) => {
+        e.matches ? enableMobileMenu() : disableMobileMenu();
+      });
     },
   };
 
@@ -619,6 +733,23 @@ function recaptchaCallback() {
     // On page load
     $(function () {
       handleMobileUI();
+    });
+
+    document.querySelectorAll(".submenu").forEach(function (submenu) {
+      submenu.addEventListener("mouseover", function (e) {
+        var li = e.target.closest("li[data-submenu-index]");
+        if (!li) return;
+        var idx = li.getAttribute("data-submenu-index");
+        submenu.querySelectorAll(".submenu-image").forEach(function (img) {
+          img.style.display =
+            img.getAttribute("data-submenu-image") === idx ? "block" : "none";
+        });
+      });
+      submenu.addEventListener("mouseleave", function () {
+        submenu.querySelectorAll(".submenu-image").forEach(function (img) {
+          img.style.display = "none";
+        });
+      });
     });
   })();
 })(window, document);

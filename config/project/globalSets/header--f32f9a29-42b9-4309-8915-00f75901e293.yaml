@@ -5,17 +5,13 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dismissible: false
             elementCondition: null
-            fieldUid: c61fd93f-7f29-4221-af77-fa7a42f2a104 # Main Navigation
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b172df5b-c7aa-49b2-b634-ff9a0c84c4c2
+            style: warning
+            tip: "**Main Navigation has moved**  \r\n[Click Here](/arcadia-admin/entries/mainNavigation?)"
+            type: craft\fieldlayoutelements\Tip
+            uid: 6e0d2e24-b339-45b4-ad83-45f84b6291ad
             userCondition: null
-            warning: null
-            width: 100
           -
             elementCondition: null
             fieldUid: 7df2599b-80fe-4758-8542-add1e40c5d27 # Nav CTA

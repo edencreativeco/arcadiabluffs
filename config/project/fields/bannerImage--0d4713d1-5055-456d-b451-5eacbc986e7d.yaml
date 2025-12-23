@@ -3,7 +3,7 @@ contentColumnType: string
 fieldGroup: 2de0d27e-44cc-4a0b-b5b3-4e9537340946 # Default
 handle: bannerImage
 instructions: 'Full-screen, featured image for the page. If no image is selected, a default image will be displayed. '
-name: 'Banner Image'
+name: 'Banner Image / Video'
 searchable: true
 settings:
   allowSelfRelations: false
@@ -11,6 +11,7 @@ settings:
   allowUploads: true
   allowedKinds:
     - image
+    - video
   branchLimit: null
   defaultUploadLocationSource: 'volume:0c261a33-5269-4599-9373-5f2b4037a4a1' # General
   defaultUploadLocationSubpath: null

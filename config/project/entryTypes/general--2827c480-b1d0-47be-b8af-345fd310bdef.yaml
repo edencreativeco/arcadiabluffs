@@ -74,7 +74,7 @@ fieldLayouts:
             userCondition: null
           -
             elementCondition: null
-            fieldUid: 0d4713d1-5055-456d-b451-5eacbc986e7d # Banner Image
+            fieldUid: 0d4713d1-5055-456d-b451-5eacbc986e7d # Banner Image / Video
             instructions: null
             label: null
             required: false
@@ -146,6 +146,18 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 31b47c9f-1118-4149-83d2-d774993959fd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fa034695-f302-45c4-818c-842e1842a583 # Gallery
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 86068597-fec5-4917-a3d7-2461c190655c
             userCondition: null
             warning: null
             width: 100

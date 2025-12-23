@@ -30,11 +30,13 @@ body {
    display: flex;
    align-items: center;
    justify-content: space-between;
-
-   padding-top: 20px;
-   padding-bottom: 20px;
+   gap:100px;
 	padding-left: $padding-content-sm;
 	padding-right: $padding-content-sm;
+
+   @include mq($until: l) {
+      padding: $padding-content-sm;
+   }
 
 	@include mq($from: l) {
 		padding-left: $padding-content-md;
@@ -232,6 +234,16 @@ body {
    }
 }
 
+// Mobile-only secondary nav links
+.nav__secondary-mobile {
+  display: none;
+  @include mq($until: l) {
+    display: block;
+  }
+
+}
+
+ @include mq($from: l) {
 /* NEW PRIMARY MENU */
 .nav__menu,
 .nav__menu ul {
@@ -248,23 +260,37 @@ body {
 /* Root menu */
 .nav__menu {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
 /* Top-level items */
 .nav__menu > li {
   position: relative;
+
+  &:last-of-type {
+   margin-left: auto;
+  }
+
+   &:hover > a:not(.btn){
+         border-color: $maroon;
+      }
+
+  > a:not(.btn) {
+   padding: 40px 10px;
+   border-bottom: 4px solid transparent;
+  }
 }
 
-@media (min-width: 1024px) {
+
   /* Hide submenus */
   .nav__menu .submenu {
       position: absolute;
       top: 100%;
       left: 0;
       padding: 15px;
-      min-width: 220px;
-      background: #fff;
+      min-width: 260px;
+      background: $white;
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
       opacity: 0;
@@ -295,6 +321,11 @@ body {
   /* Submenu items */
   .nav__menu .submenu li a {
     padding: 5px 10px;
+
+    &:hover {
+      color:$maroon;
+      text-decoration: underline;
+    }
   }
 
   /* Chevron */
@@ -306,5 +337,108 @@ body {
 }
 
 
+ @include mq($until: l) {
+	/* --- Menu wrapper --- */
+	.nav__menu {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100%;
+		max-width: 360px;
+		height: 100vh;
+		background: #fff;
+		transform: translateX(100%);
+		transition: transform 0.35s ease;
+		overflow: hidden;
+		z-index: 99999;
+	}
 
+	.nav__menu.is-open {
+		transform: translateX(0);
+	}
+
+	/* --- Menu levels --- */
+	.nav__menu,
+	.submenu {
+		list-style: none;
+		padding: 20px;
+		margin: 0;
+	}
+
+   .nav__menu li {
+      border-bottom: 1px solid $white-smoke;
+     
+      display: flex;
+      justify-content: space-between;
+
+      a {
+         display: block;
+         flex: 1;
+          padding: 15px;
+      }
+   }
+
+   .submenu-toggle {
+      @include buttonReset();
+   }
+
+   .submenu-image-wrap {
+      display: none !important
+   }
+
+	/* --- Submenus slide horizontally --- */
+	.submenu {
+		position: absolute;
+      z-index: 1000;
+		top: 0;
+		left: 100%;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		transition: transform 0.35s ease;
+	}
+
+	.has-children.is-active > .submenu {
+		transform: translateX(-100%);
+	}
+
+	/* Back button */
+	.submenu-back {
+		margin-bottom: 20px;
+	}
+
+	.submenu-back button {
+      @include buttonReset();
+      color: $maroon;
+		background: none;
+		border: 0;
+		font-size: 16px;
+		cursor: pointer;
+	}
+}
+
+.nav__wrapper {
+   flex: 1;
+}
+
+// Custom dropdown indicator SVG for nav
+.nav__menu > li.has-children > a {
+  position: relative;
+  padding-right: 1.5em;
+}
+.nav__menu > li.has-children > a::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><mask id="mask0_2353_71" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14"><rect width="14" height="14" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_2353_71)"><path d="M6.99997 8.78135L3.70195 5.48333L4.31664 4.86864L6.99997 7.55198L9.6833 4.86864L10.298 5.48333L6.99997 8.78135Z" fill="%23B92233"/></g></svg>') no-repeat center center/contain;
+  vertical-align: middle;
+  margin-left: 0.25em;
+}
+
+@include mq($until: l) {
+   .nav__menu > li.has-children > a::after {
+      display: none;
+   }
+}
 

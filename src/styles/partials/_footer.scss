@@ -64,6 +64,7 @@
    border-top: 1px solid rgba($gold,0.25);
    border-bottom: 4px solid $gold;
    display: flex;
+   flex-direction: column;
    align-items: center;
    justify-content: space-between;
    @include font-size(14px);
@@ -85,9 +86,11 @@
 }
 
 .footer__menu {
-   @extend .nav__menu;
+   // @extend .nav__menu;
+   margin-top: $padding-content-md;
    li {
       margin-right: $padding-content-sm;
+      text-transform: uppercase;
       @include mq($until: m) {
          width: 100%;
          margin-right: 0;
@@ -109,9 +112,8 @@
 
 // Bottom Footer
 .footer-bottom {
-   @extend %wrapper;
-   padding-top: ($padding-content-sm * 0.5);
-   padding-bottom: ($padding-content-sm * 0.5);
+   // @extend %wrapper;
+   padding: ($padding-content-sm * 0.5);
    background: $maroon;
    @include font-size(14px);
    color: $gold;

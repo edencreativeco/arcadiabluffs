@@ -14,8 +14,9 @@
 
 	{% set currentUrl = craft.app.request.absoluteUrl %}
 
-	<nav>
-		<ul class="nav__menu menu">
+	<nav class="nav__wrapper" role="navigation" aria-label="Main Navigation">
+		
+		<ul class="nav__menu">
 			{% for item in navItems %}
 			{% set hasChildren = item.children|length %}
 			{% set isActive =
@@ -29,9 +30,18 @@
 				{{ isActive ? 'is-active' }}
 			">
 				{{ item.navigationLink.link }}
+				{% set parentImage = item.navigationImage.one() %}
+				
 
 				{% if hasChildren %}
 				<ul class="submenu">
+					{% if parentImage %}
+						{% set navImage = craft.imager.transformImage(parentImage, { width: 200, mode: 'fit' }) %}
+						<div class="submenu-image-wrap">
+							<img class="submenu-image" src="{{ navImage.url }}" alt="{{ parentImage.title }}" data-submenu-image="parent">
+						</div>
+					{% endif %}
+					<li class="js-submenu-back submenu-back" style="display:none;"><button type="button">Back</button></li>
 					{% for child in item.children %}
 					{% set childActive = child.navigationLink.url == currentUrl %}
 
@@ -51,32 +61,32 @@
 				{% endif %}
 			</li>
 			{% endfor %}
+		{% set navMenu = header.secondaryNavigation.all() %}
+		{% if navMenu|length %}
+			{% for link in navMenu %}
+				{% if link.linkField.getUrl() %}
+					<li class="nav__secondary-mobile">
+						<a target="{{link.linkField.target}}" href="{{ link.linkField.getUrl() }}">{{ link.linkField.getText() }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		{% if header.navCta and header.navCta.getUrl() %}
+			<li>
+				<a class="btn" target="{{header.navCta.target}}" href="{{ header.navCta.getUrl() }}">{{ header.navCta.getText() }}</a>
+			</li>
+		{% endif %}
 		</ul>
 	</nav>
 
-	<button class="nav__toggle js-nav-toggle">Menu</button>
+
+	<button class="nav__toggle js-menu-toggle">Menu</button>
+	
 </div>
 
-<script>
-// Only show the hovered submenu image
-(function() {
-  document.querySelectorAll('.submenu').forEach(function(submenu) {
-    submenu.addEventListener('mouseover', function(e) {
-      var li = e.target.closest('li[data-submenu-index]');
-      if (!li) return;
-      var idx = li.getAttribute('data-submenu-index');
-      submenu.querySelectorAll('.submenu-image').forEach(function(img) {
-        img.style.display = (img.getAttribute('data-submenu-image') === idx) ? 'block' : 'none';
-      });
-    });
-    submenu.addEventListener('mouseleave', function() {
-      submenu.querySelectorAll('.submenu-image').forEach(function(img) {
-        img.style.display = 'none';
-      });
-    });
-  });
-})();
-</script>
+
+
+
 
 
 
