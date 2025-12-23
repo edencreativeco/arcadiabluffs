@@ -26,8 +26,8 @@
 		{% endif %}
 		{% if template == 'hole-entry' %}
 			{% set url = craft.app.request.getSegment(1) %}
-			<a href="/{{ url }}" class="banner__link">Back to Course</a>
-			<h1 class="banner__headline">{{ entry.title }}</h1>
+			{# <a href="/{{ url }}" class="banner__link">Back to Course</a>
+			<h1 class="banner__headline">{{ entry.title }}</h1> #}
 		{% else %}
 			<h1 class="banner__headline">{{ title }}</h1>
 		{% endif %}
