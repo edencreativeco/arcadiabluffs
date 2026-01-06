@@ -1,4 +1,4 @@
-changedFieldIndicator: null
+changedFieldIndicator: 1507622725
 field: 856cdfa4-1efe-4001-886c-d78fedae1bb6 # Announcement
 fieldLayouts:
   07806612-de8b-44e7-af31-dd5fb01e66bf:
@@ -27,18 +27,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 627e2b29-f608-4b25-b39d-482ee6ae9568
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: d674a38b-5677-430e-90af-0524d99826b5 # Text
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 26551f82-1a2b-40fa-8980-531c2918329e
             userCondition: null
             warning: null
             width: 100
@@ -287,28 +275,3 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  d674a38b-5677-430e-90af-0524d99826b5: # Text
-    columnSuffix: null
-    contentColumnType: text
-    fieldGroup: null
-    handle: text
-    instructions: null
-    name: Text
-    searchable: true
-    settings:
-      availableTransforms: '*'
-      availableVolumes: '*'
-      characterLimit: null
-      ckeConfig: 49a3924a-193d-40e7-ac57-4709787234ed # Simple
-      columnType: text
-      defaultTransform: null
-      purifierConfig: null
-      purifyHtml: true
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: true
-      showWordCount: false
-      sourceEditingGroups: '*'
-      wordLimit: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\ckeditor\Field
