@@ -73,7 +73,7 @@
 
       {% if entry.accommodationPricing | length %}
 
-        <div class="accommodations-entry__pricing-wrap">
+        <div class="accommodations-entry__pricing-wrap js-tab-wrapper">
           <div class="accommodations-entry__a-pricing">
             <h2 class="accommodations-entry__pricing-headline">{{ entry.accommodationPricingHeadline }} <span class="accommodations-entry__pricing-label">Select Your Visiting Date Below</span></h2>
             <div class="pricing__tabs-wrap">
@@ -124,11 +124,17 @@
               </div>
             {% endfor %}
           </div>
+            
         </div>
+        
 
       {% endif %}
 
     </div>
+    {% include '_partials/rate-table' with { addMarginTop: true } %}
+
+    
+    
 
     {% if entry.contentBlock|length %}
       <div class="book-cta">

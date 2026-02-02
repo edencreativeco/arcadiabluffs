@@ -138,12 +138,17 @@ function recaptchaCallback() {
       $(".tabs__link").click(function (e) {
         e.preventDefault();
         var id = $(this).attr("data-tab");
+        var $parent = $(this).closest(
+          ".rates-table, .tabs-wrapper, .tabset, .js-tab-wrapper",
+        );
 
-        $(".tabs__link").removeClass("active");
-        $(".tabs__content").removeClass("active");
+        $parent.find(".tabs__link").removeClass("active");
+        $parent.find(".tabs__content").removeClass("active");
 
         $(this).addClass("active");
-        $(".tabs__content[data-content='" + id + "']").addClass("active");
+        $parent
+          .find(".tabs__content[data-content='" + id + "']")
+          .addClass("active");
       });
     },
 
@@ -411,7 +416,7 @@ function recaptchaCallback() {
           }
           // Add label
           $(this).append(
-            '<span class="home-slider__label">' + label[count] + "</span>"
+            '<span class="home-slider__label">' + label[count] + "</span>",
           );
           count++;
         });
@@ -541,7 +546,7 @@ function recaptchaCallback() {
                 lineItems[i].qty +
                 "</td><td>$" +
                 lineItems[i].qty * lineItems[i].unitCost +
-                "</td>"
+                "</td>",
             );
             total += lineItems[i].qty * lineItems[i].unitCost;
           }
@@ -606,7 +611,7 @@ function recaptchaCallback() {
     if (!header) return;
     document.body.style.setProperty(
       "--header-height",
-      `${header.clientHeight}px`
+      `${header.clientHeight}px`,
     );
   }
 
@@ -677,7 +682,7 @@ function recaptchaCallback() {
     function showTab(tabKey) {
       $(".rates-table .tabs__content").removeClass("active");
       $('.rates-table .tabs__content[data-content="' + tabKey + '"]').addClass(
-        "active"
+        "active",
       );
     }
 
@@ -685,14 +690,14 @@ function recaptchaCallback() {
       if (!isMobile()) {
         $(".rates-table__desktop-table").show();
         $(
-          ".rates-table__mobile-columns, .rates-table__mobile-table, .rates-table__course-select-wrap"
+          ".rates-table__mobile-columns, .rates-table__mobile-table, .rates-table__course-select-wrap",
         ).hide();
         $(".rates-table__tabs").show();
         return;
       }
       $(".rates-table__desktop-table").hide();
       $(
-        ".rates-table__mobile-columns, .rates-table__mobile-table, .rates-table__course-select-wrap"
+        ".rates-table__mobile-columns, .rates-table__mobile-table, .rates-table__course-select-wrap",
       ).show();
       $(".rates-table__tabs").hide();
 
@@ -702,7 +707,7 @@ function recaptchaCallback() {
 
       // Render the mobile table for the active tab
       var $tabContent = $(
-        '.rates-table .tabs__content[data-content="' + tabKey + '"]'
+        '.rates-table .tabs__content[data-content="' + tabKey + '"]',
       );
       updateMobileTable($tabContent);
     }
@@ -712,7 +717,7 @@ function recaptchaCallback() {
       var tabKey = $(this).val();
       showTab(tabKey);
       var $tabContent = $(
-        '.rates-table .tabs__content[data-content="' + tabKey + '"]'
+        '.rates-table .tabs__content[data-content="' + tabKey + '"]',
       );
       updateMobileTable($tabContent);
     });
