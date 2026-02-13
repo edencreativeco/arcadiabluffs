@@ -147,6 +147,50 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
+            fieldUid: f2452e29-cbb5-4dca-babe-7ac49286ec08 # Rates Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 85bfafc6-4ba7-49ba-bfe3-45125d0ea69d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f8cf0b6a-3ca6-4f73-9c2b-327c4c9ffcd6 # Rate Table
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7dd30a87-ee77-4aef-8365-12d501aaac23
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fbdf3e6b-f09a-4707-b299-3b9145e7ddf8 # Rates Footnotes
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4e054f4e-b1e6-4227-a5c4-9b51fe90d488
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dismissible: false
+            elementCondition: null
+            style: warning
+            tip: 'Everything below this has been deprecated for the new Rates Table. Leaving here for historical data'
+            type: craft\fieldlayoutelements\Tip
+            uid: 282efbff-5d1a-447e-9cf0-0b364cbae02f
+            userCondition: null
+          -
+            elementCondition: null
             fieldUid: 30049732-fd90-437a-a48a-2fac94fdb736 # Accommodation Pricing Headline
             instructions: null
             label: null

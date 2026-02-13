@@ -142,6 +142,18 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 19bb0a88-fde9-42d3-a5d4-d4831e16fdae # Accommodations Rates Table
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 108cb964-b506-4422-b32d-004a4d386ffe
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: f8f2f03e-0c0f-42b5-9c26-55fa779fc89e
         userCondition: null

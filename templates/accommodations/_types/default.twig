@@ -71,7 +71,7 @@
         {% endif %}
 
 
-      {% if entry.accommodationPricing | length %}
+      {# DEPRECATED FOR NEW RATES TABLE {% if entry.accommodationPricing | length %}
 
         <div class="accommodations-entry__pricing-wrap js-tab-wrapper">
           <div class="accommodations-entry__a-pricing">
@@ -128,10 +128,10 @@
         </div>
         
 
-      {% endif %}
+      {% endif %} #}
 
     </div>
-    {% include '_partials/rate-table' with { addMarginTop: true } %}
+    {% include '_partials/rate-table' with { addMarginTop: true, section:'accommodationsStructure' } %}
 
     
     

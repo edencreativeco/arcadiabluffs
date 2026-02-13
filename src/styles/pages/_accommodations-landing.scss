@@ -24,7 +24,7 @@
       margin-bottom: 0;
    }
    @include mq($from: m) {
-      width: calc(33.33% - #{$padding-content-md});
+      width: calc(50% - 15px);
       margin-bottom: 0;
    }
 }

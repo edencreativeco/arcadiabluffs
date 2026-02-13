@@ -1,4 +1,4 @@
-dateModified: 1767720621
+dateModified: 1770995455
 elementSources:
   SproutForms_Entry:
     -
@@ -297,9 +297,11 @@ meta:
     16ea3636-5874-40e9-aa29-e602ce41ffcf: Navigation # Navigation
     17e2c1dd-aecc-48d0-bdee-ee898abe0a3b: Name # Name
     18d710bf-237c-4a66-9707-1a63cc543871: Headline # Headline
+    19bb0a88-fde9-42d3-a5d4-d4831e16fdae: 'Accommodations Rates Table' # Accommodations Rates Table
     19d04551-214f-4e9b-9a5e-ff66d6fe1028: News # News
     23bb67c9-f116-462a-a1dc-d13ac3f62749: 'The Dozen Hole by Hole' # The Dozen Hole by Hole
     25fa5a36-9a68-4a58-906e-ca514a2e6ad9: Body # Body
+    33c879fb-3411-4a0b-8862-47c844d32b40: Headline # Headline
     40b5fa5a-5d55-4783-aac4-a7c9cc3c991d: 'Accommodation Layouts 2' # Accommodation Layouts 2
     40cf8533-8180-4806-9383-dd85361794b4: Button # Button
     043b0e31-2a28-45c5-853c-2723fe2ce724: Headline # Headline
@@ -360,6 +362,7 @@ meta:
     928a4a05-b9d0-4bbe-aefb-6ca1bb44af92: State # State
     947f4266-c25e-42b4-a78e-07321ff4e4d3: 'Tab Text' # Tab Text
     959a38bb-a856-451b-a3db-eff0e9bf621e: 'Course Intro Block' # Course Intro Block
+    986c5e1d-6075-4349-ab50-53a78482bfb5: 'Accommodations Rates Table' # Accommodations Rates Table
     1193d4ea-5437-469f-9ffa-3fab34a8ab93: General # General
     2110e6ce-45ed-474d-981b-5a7181bf639b: 'Linked List' # Linked List
     2132d92c-8d1b-447c-9f8d-15b1e166d5f1: Par # Par
@@ -512,6 +515,7 @@ meta:
     ee9dcd04-b2cf-416c-86a4-45519eae43ef: 'Link Url' # Link Url
     ef4a4b55-2f0b-4ae9-a241-c51388f63ff5: Description # Description
     ef70e1b7-cf97-43cd-a65e-52ccff3a11b2: Body # Body
+    ef92d9a4-234c-4884-95d5-bf4cabf8efba: 'Rates Link' # Rates Link
     ef20410f-26b2-4646-9ede-58291bab1f3a: Handicap # Handicap
     f0dca59d-239c-4146-813f-2b147b0ce790: Image # Image
     f02a0d8f-d625-405c-a782-87b045350b7f: Dining # Dining

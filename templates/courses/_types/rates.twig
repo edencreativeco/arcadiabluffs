@@ -13,7 +13,7 @@
 	{% include '_partials/subpage-menu' %}
 
 	<main class="main main__{{ template }}" role="main">
-    {% include '_partials/rate-table' %}
+    {% include '_partials/rate-table' with {section:'coursesStructure'} %}
     <div class="o-wrapper">
         <section class="rates-list">
           {% for block in entry.ratesList %}

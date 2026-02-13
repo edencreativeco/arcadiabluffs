@@ -52,10 +52,31 @@
 			</div>
 
 			<div class="accommodations__cta">
-				{{ macros.contentBlock(entry.contentBlock) }}
+				
+			
+
+				{% for block in entry.accommodationsRatesTable %}
+
+					{% if block.type == "accommodationsRatesTable" %}
+							
+							{% include '_partials/rate-table' with { addMarginTop: false, section:'accommodationsStructure', headline: block.headline } %}
+							
+
+							{% if block.ratesLink.getUrl() %}
+							<div class="o-home-accommodations__btns">
+								<a class="btn" target="{{block.ratesLink.target}}" href="{{ block.ratesLink.getUrl() }}">{{ block.ratesLink.getText() }}</a>
+							</div>
+							{% endif %}
+
+						
+
+					{% endif %}
+
+				{% endfor %}
 			</div>
 
 		</section>
+		 
 
 		{% if entry.accommodationForm is defined and entry.accommodationForm.one() %}
 
