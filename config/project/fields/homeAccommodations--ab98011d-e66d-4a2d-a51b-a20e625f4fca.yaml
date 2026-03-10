@@ -7,7 +7,7 @@ name: 'Home Accommodations'
 searchable: true
 settings:
   blockTypeFields: 0
-  changedFieldIndicator: null
+  changedFieldIndicator: 707429029
   columns:
     __assoc__:
       -
@@ -47,5 +47,5 @@ settings:
   selectionLabel: 'Add a row'
   staticField: true
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: verbb\supertable\fields\SuperTableField

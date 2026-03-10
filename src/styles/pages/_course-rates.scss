@@ -1,3 +1,5 @@
+@import 'rates-table';
+
 .rates-overview {
    @extend %lg-section;
    border-bottom: 1px solid $white-smoke;
@@ -88,6 +90,7 @@
   @extend %headline;
   margin-bottom: $padding-content-sm;
   width: 100%;
+  text-align: center;
 }
 
 .rates__pricing-subheadline {
@@ -169,10 +172,11 @@
 
 // 2x2 Grid
 .rates-list {
-   @extend %lg-section;
+   @extend %md-section;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
+   border-top: 1px solid $white-smoke;
 }
 
 .rates-list__item {
@@ -185,7 +189,7 @@
 
 .rates-list__headline {
    @extend %headline;
-   color: $charcoal;
+   color: $maroon;
    margin-bottom: .5rem;
 }
 

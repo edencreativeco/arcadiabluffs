@@ -1,0 +1,78 @@
+field: f8cf0b6a-3ca6-4f73-9c2b-327c4c9ffcd6 # Rate Table
+fieldLayouts:
+  2c2529e2-2393-4d82-a9c1-12c97e2207ed:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 7ca16702-9f38-4a56-b596-69cc5e8cdb90 # Testing
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b5bb0cb9-c597-41b2-8fbc-7bc85b2f18f3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e09eb65e-c94c-4c69-a5d6-3125c97ded07 # Testing 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6168c695-77d5-417b-b8d3-cd180b108a7d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c04036be-b706-4896-8288-cb4c682885aa
+        userCondition: null
+fields:
+  7ca16702-9f38-4a56-b596-69cc5e8cdb90: # Testing
+    columnSuffix: vifennnk
+    contentColumnType: text
+    fieldGroup: null
+    handle: testing
+    instructions: null
+    name: Testing
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e09eb65e-c94c-4c69-a5d6-3125c97ded07: # Testing 2
+    columnSuffix: rarjkovl
+    contentColumnType: text
+    fieldGroup: null
+    handle: testing2
+    instructions: null
+    name: 'Testing 2'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: headerColumn
+name: 'Header Column'
+sortOrder: 1

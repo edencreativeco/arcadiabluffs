@@ -7,7 +7,7 @@ name: Announcement
 searchable: true
 settings:
   blockTypeFields: 0
-  changedFieldIndicator: null
+  changedFieldIndicator: 1560918335
   columns:
     __assoc__:
       -
@@ -19,13 +19,6 @@ settings:
               - ''
       -
         - 5c4dce04-09b5-4782-8525-f9501e72fd30 # Headline
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - d674a38b-5677-430e-90af-0524d99826b5 # Text
         -
           __assoc__:
             -
@@ -47,5 +40,5 @@ settings:
   selectionLabel: 'Add a row'
   staticField: true
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: verbb\supertable\fields\SuperTableField

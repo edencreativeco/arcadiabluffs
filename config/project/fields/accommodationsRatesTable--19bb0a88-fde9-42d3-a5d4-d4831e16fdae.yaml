@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 2eac97af-c8bb-4f52-82d5-7b98c2c2bb90 # Accommodations
+handle: accommodationsRatesTable
+instructions: null
+name: 'Accommodations Rates Table'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_accommodationsratestable}}'
+  maxBlocks: 1
+  minBlocks: 1
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

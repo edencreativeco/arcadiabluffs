@@ -1,4 +1,4 @@
-dateModified: 1763657531
+dateModified: 1770996156
 elementSources:
   SproutForms_Entry:
     -
@@ -158,7 +158,7 @@ elementSources:
       key: 'section:8d55db04-8897-450d-a5f2-625d80a8eab2' # Call To Actions
       tableAttributes:
         - 'field:dcb31393-3ea4-4a2a-a287-c79dfba31b0a' # CTA Headline
-        - 'field:0d4713d1-5055-456d-b451-5eacbc986e7d' # Banner Image
+        - 'field:0d4713d1-5055-456d-b451-5eacbc986e7d' # Banner Image / Video
         - dateCreated
         - dateUpdated
       type: native
@@ -210,7 +210,7 @@ meta:
     0cf694de-6970-4003-8a9d-984c9ba91d3f: 'Course Landing' # Course Landing
     0d74f61b-dc87-456d-8d90-e09e6f4f8efc: 'Intro Block' # Intro Block
     0d624f18-bf3c-49b5-becb-533c2185c9b9: 'Button Text' # Button Text
-    0d4713d1-5055-456d-b451-5eacbc986e7d: 'Banner Image' # Banner Image
+    0d4713d1-5055-456d-b451-5eacbc986e7d: 'Banner Image / Video' # Banner Image / Video
     0e2a9e40-9910-47e0-b2d7-052c425013b2: 'Accommodation Extras' # Accommodation Extras
     0e38621c-2421-4292-ae5b-aa86828ee673: 'Linked List' # Linked List
     0ef55052-1ae5-436b-b9cd-64be16fcf0db: 'Accommodation Form Content' # Accommodation Form Content
@@ -231,6 +231,7 @@ meta:
     2bc9f6e5-515f-41d6-8c72-a457d3bad7a0: 'Accommodations Overview' # Accommodations Overview
     2c18936f-5777-4b43-9390-20d3b4f26d51: Metadata # Metadata
     2cbe1637-1cb0-4d03-a7f0-61e14788e974: Image # Image
+    2d72ecbd-ef65-4454-9884-b15eada1cb49: 'Header Column' # Header Column
     2de0d27e-44cc-4a0b-b5b3-4e9537340946: Default # Default
     2e0e521e-50dc-4fc4-b923-0360760a0c28: Text # Text
     2e89d38a-eaec-4b2b-943f-d94ba49050d0: Headline # Headline
@@ -272,6 +273,7 @@ meta:
     7a261b1e-d387-4b69-aa5b-4a21ed282daf: Body # Body
     7b3e1dd7-7c27-4a5a-839f-8b3f368349ef: Awards # Awards
     7bbf65b1-050d-451a-a681-13b0bbe158a1: Body # Body
+    7ca16702-9f38-4a56-b596-69cc5e8cdb90: Testing # Testing
     07d636bc-6c41-49a1-8dea-face54ffd745: 'Content Block' # Content Block
     7da47c32-f9fb-4a89-9c30-22238ac588bd: 'Slope Tables' # Slope Tables
     7df2599b-80fe-4758-8542-add1e40c5d27: 'Nav CTA' # Nav CTA
@@ -281,6 +283,7 @@ meta:
     8b26cdc7-ea7e-4875-9eb9-ed4bbac17bd0: Body # Body
     8bd73b98-da2c-4be5-8469-9c6bbf19a909: Image # Image
     8c62cfca-5a41-451c-9f8e-1272591144b7: Standard # Standard
+    8ce047aa-818d-4f89-8b27-ee67e4018da1: 'Navigation Link' # Navigation Link
     8d3a52a0-3ef6-4c6f-a812-1b9972d643d9: 'Apply Callout' # Apply Callout
     8d55db04-8897-450d-a5f2-625d80a8eab2: 'Call To Actions' # Call To Actions
     8e05d955-2d0c-460c-ae59-bc51e9877ea8: CTA # CTA
@@ -294,9 +297,11 @@ meta:
     16ea3636-5874-40e9-aa29-e602ce41ffcf: Navigation # Navigation
     17e2c1dd-aecc-48d0-bdee-ee898abe0a3b: Name # Name
     18d710bf-237c-4a66-9707-1a63cc543871: Headline # Headline
+    19bb0a88-fde9-42d3-a5d4-d4831e16fdae: 'Accommodations Rates Table' # Accommodations Rates Table
     19d04551-214f-4e9b-9a5e-ff66d6fe1028: News # News
     23bb67c9-f116-462a-a1dc-d13ac3f62749: 'The Dozen Hole by Hole' # The Dozen Hole by Hole
     25fa5a36-9a68-4a58-906e-ca514a2e6ad9: Body # Body
+    33c879fb-3411-4a0b-8862-47c844d32b40: Headline # Headline
     40b5fa5a-5d55-4783-aac4-a7c9cc3c991d: 'Accommodation Layouts 2' # Accommodation Layouts 2
     40cf8533-8180-4806-9383-dd85361794b4: Button # Button
     043b0e31-2a28-45c5-853c-2723fe2ce724: Headline # Headline
@@ -340,6 +345,7 @@ meta:
     410c8902-a790-4c5f-abc6-814d182c5d7c: Option # Option
     600b7de6-7c7a-4e9b-897f-2f2def2e9bbd: Text # Text
     682d4143-3055-4236-a72f-d8490d82a088: Description # Description
+    683e2335-935b-4dc5-b783-616901ccc493: Footnote # Footnote
     703e4c00-55cf-4b57-a7ee-db4aa2f6e060: 'Home Hero' # Home Hero
     716abbda-6a26-45cc-b52c-901463010380: 'Page Links' # Page Links
     757ad3bc-3bc1-4828-91ee-a35c04d93e82: Image # Image
@@ -356,6 +362,7 @@ meta:
     928a4a05-b9d0-4bbe-aefb-6ca1bb44af92: State # State
     947f4266-c25e-42b4-a78e-07321ff4e4d3: 'Tab Text' # Tab Text
     959a38bb-a856-451b-a3db-eff0e9bf621e: 'Course Intro Block' # Course Intro Block
+    986c5e1d-6075-4349-ab50-53a78482bfb5: 'Accommodations Rates Table' # Accommodations Rates Table
     1193d4ea-5437-469f-9ffa-3fab34a8ab93: General # General
     2110e6ce-45ed-474d-981b-5a7181bf639b: 'Linked List' # Linked List
     2132d92c-8d1b-447c-9f8d-15b1e166d5f1: Par # Par
@@ -392,6 +399,7 @@ meta:
     087746ce-cab7-47d4-ae7d-7b653a9bbff3: General # General
     87920f6c-d778-4955-a9eb-3ffbe093bc7e: 'Accommodations Headline' # Accommodations Headline
     88498e7c-15c7-4de4-9b99-3dd79ea914e1: 'Details List' # Details List
+    91430bb0-e893-4ae9-961b-648284afcc92: 'Main Navigation' # Main Navigation
     95930b1a-46ab-472b-bbc8-08004eee0333: Link # Link
     96026f6b-4401-4546-b7e2-9549a9ecbf38: Video # Video
     98628ef5-a914-449f-95e6-0524f6aad125: Description # Description
@@ -399,6 +407,7 @@ meta:
     170684cb-0759-412d-8fe9-a4b049a2cb63: Awards # Awards
     441642ef-65bb-460b-bf11-9a7b5014942b: Contact # Contact
     669373c9-7338-40ff-b910-b4e164a5c4e4: Description # Description
+    0942620b-34cc-4de4-8e29-b884454cdf06: 'Navigation Image' # Navigation Image
     961562fa-ae3d-4a9d-b304-43d727329d53: 'Private Event Options' # Private Event Options
     11296663-245b-4f30-a14a-3c31b3690349: Course # Course
     11950123-d1fd-4f74-b0cd-016b75c75cb9: Metadata # Metadata
@@ -466,6 +475,7 @@ meta:
     ce1d1e5c-5010-49e7-a946-99d7621d108f: 'Rates List' # Rates List
     ce962529-a5c5-4d53-8330-22c3a6d5d6da: Awards # Awards
     cfc96944-eb9c-41e9-a313-1ac2fac8eec2: Table # Table
+    d00fb412-e3fa-4f13-b48b-7cd0d3b132c3: Default # Default
     d02a9c6c-376c-4ddf-b819-ab59d7e1afc7: 'User Photos' # User Photos
     d08f7f35-3977-48a8-8fea-d79697d19e1e: Text # Text
     d094cea2-a9d5-492a-9663-e179d0878780: Email # Email
@@ -477,13 +487,13 @@ meta:
     d9cb1d6c-2477-4fd3-8b36-6d7a1a3161f0: Headline # Headline
     d72e767d-d3ea-4731-8e82-2981e56059c7: 'Local Airports' # Local Airports
     d238cda2-b052-4d87-ac6b-67b58f334729: 'Link Text' # Link Text
-    d674a38b-5677-430e-90af-0524d99826b5: Text # Text
     d838d1b8-1c0e-469d-bb0d-e1a9d81413fc: 'General Contacts' # General Contacts
     d81677db-f7f5-4393-a4c3-6f56ef537fb6: Link # Link
     dcb31393-3ea4-4a2a-a287-c79dfba31b0a: 'CTA Headline' # CTA Headline
     ddfbbfff-4c50-4552-a93d-78d990a5b58d: Headline # Headline
     df2fb927-6c87-4678-9950-d3a004411ca8: Courses # Courses
     e0c7ac16-2ecd-4551-8951-1928b93f8112: 'Social Links' # Social Links
+    e09eb65e-c94c-4c69-a5d6-3125c97ded07: 'Testing 2' # Testing 2
     e1b08e83-a1f1-4c82-9f19-ffa70434df89: 'Dining Options' # Dining Options
     e3dd14d9-3105-4555-b8c3-9b7328d545ec: Default # Default
     e7abf986-5d53-4c23-baa6-c6a8b574595c: State # State
@@ -505,14 +515,17 @@ meta:
     ee9dcd04-b2cf-416c-86a4-45519eae43ef: 'Link Url' # Link Url
     ef4a4b55-2f0b-4ae9-a241-c51388f63ff5: Description # Description
     ef70e1b7-cf97-43cd-a65e-52ccff3a11b2: Body # Body
+    ef92d9a4-234c-4884-95d5-bf4cabf8efba: 'Rates Link' # Rates Link
     ef20410f-26b2-4646-9ede-58291bab1f3a: Handicap # Handicap
     f0dca59d-239c-4146-813f-2b147b0ce790: Image # Image
     f02a0d8f-d625-405c-a782-87b045350b7f: Dining # Dining
     f1c11c8d-f329-418c-bc33-04ebbd281450: 'Live Stream' # Live Stream
     f3cf412c-f5d5-463b-b63a-7b34943ecef5: Headline # Headline
+    f5b85191-3d88-424f-a239-9efee401119c: Footnote # Footnote
     f6bcefc8-ac26-490c-a830-4863fd39731d: Phone # Phone
     f6e6587a-95e2-41ba-9aac-8dce148d0af5: 'Intro Block' # Intro Block
     f6f57ddb-d979-455a-8803-923779a0aece: 'Accommodation Pricing' # Accommodation Pricing
+    f8cf0b6a-3ca6-4f73-9c2b-327c4c9ffcd6: 'Rate Table' # Rate Table
     f9d54a63-f4b4-46a3-9822-b08270fddf91: 'Home Courses' # Home Courses
     f19fa97c-7a36-4123-bc74-ed3e6b4f2c29: 'Hero Video' # Hero Video
     f32f9a29-42b9-4309-8915-00f75901e293: Header # Header
@@ -526,6 +539,7 @@ meta:
     fa18f022-c31d-4657-8393-23057ca360d1: Headline # Headline
     fbbd0fba-c1f3-4450-a63f-4ff62a510f01: News # News
     fbd9a4ad-7fd5-495b-8367-17a73f5b8356: 'Accommodation Layout' # Accommodation Layout
+    fbdf3e6b-f09a-4707-b299-3b9145e7ddf8: 'Rates Footnotes' # Rates Footnotes
     fbf63f47-0d11-40d0-9889-18017e89451a: Link # Link
     fc68f54b-60ab-4251-8ec9-15ea9b776eef: 'Street Address 1' # Street Address 1
     fd52f2bc-9e8e-4025-9502-fab5a89e68ae: 'Arcadia Bluffs Address' # Arcadia Bluffs Address
@@ -948,6 +962,10 @@ plugins:
     licenseKey: null
     schemaVersion: 3.0.0
     settings: null
+  tablemaker:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
 system:
   edition: pro
   live: true

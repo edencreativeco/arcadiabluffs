@@ -170,6 +170,10 @@
 
 			{{ macros.video(entry.video, template) }}
 
+			{% if entry.gallery | length %}
+				{{ macros.gallery(entry.gallery, template) }}
+			{% endif %}
+
 		</div>
 	</main>
 

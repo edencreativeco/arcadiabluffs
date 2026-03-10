@@ -6,6 +6,8 @@
 	margin-right: auto;
 	padding-left: $padding-content-sm;
 	padding-right: $padding-content-sm;
+	width: 1700px;
+	max-width: 100%;
 	@include mq($from: m) {
 		padding-left: $padding-content-md;
 		padding-right: $padding-content-md;
@@ -19,7 +21,8 @@
 %sm-wrapper,
 .o-wrapper--sm {
 	@extend %wrapper;
-	max-width: 675px;
+	width: 675px;
+	max-width: 100%;
 	@include mq($from: xxl) {
 		padding-left: $padding-content-md;
 		padding-right: $padding-content-md;
@@ -29,7 +32,8 @@
 %md-wrapper,
 .o-wrapper--md {
 	@extend %wrapper;
-	max-width: 1200px;
+	width: 1200px;
+	max-width: 100%;
 	@include mq($from: xxl) {
 		padding-left: $padding-content-md;
 		padding-right: $padding-content-md;

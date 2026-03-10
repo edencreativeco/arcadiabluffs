@@ -1,23 +1,22 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: 2de0d27e-44cc-4a0b-b5b3-4e9537340946 # Default
-handle: bannerImage
-instructions: 'Full-screen, featured image for the page. If no image is selected, a default image will be displayed. '
-name: 'Banner Image / Video'
-searchable: true
+fieldGroup: 16ea3636-5874-40e9-aa29-e602ce41ffcf # Navigation
+handle: navigationImage
+instructions: null
+name: 'Navigation Image'
+searchable: false
 settings:
   allowSelfRelations: false
   allowSubfolders: false
   allowUploads: true
   allowedKinds:
     - image
-    - video
   branchLimit: null
   defaultUploadLocationSource: 'volume:0c261a33-5269-4599-9373-5f2b4037a4a1' # General
   defaultUploadLocationSubpath: null
   localizeRelations: false
   maintainHierarchy: false
-  maxRelations: 1
+  maxRelations: null
   minRelations: null
   previewMode: full
   restrictFiles: true
@@ -25,15 +24,14 @@ settings:
   restrictedDefaultUploadSubpath: null
   restrictedLocationSource: 'volume:0c261a33-5269-4599-9373-5f2b4037a4a1' # General
   restrictedLocationSubpath: null
-  selectionLabel: 'Add a Banner Image'
-  showSiteMenu: true
+  selectionLabel: null
+  showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  sources:
-    - 'volume:0c261a33-5269-4599-9373-5f2b4037a4a1' # General
+  sources: '*'
   targetSiteId: null
   validateRelatedElements: false
-  viewMode: large
+  viewMode: list
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Assets

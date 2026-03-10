@@ -1,62 +1,69 @@
-changedFieldIndicator: 1507622725
-field: 856cdfa4-1efe-4001-886c-d78fedae1bb6 # Announcement
+field: 19bb0a88-fde9-42d3-a5d4-d4831e16fdae # Accommodations Rates Table
 fieldLayouts:
-  07806612-de8b-44e7-af31-dd5fb01e66bf:
+  0d80d2b6-6c48-4a1a-aa1c-a9501121de44:
     tabs:
       -
         elementCondition: null
         elements:
           -
             elementCondition: null
-            fieldUid: 47333271-0ec9-46c1-8a97-252f94aff32c # Enabled
+            fieldUid: 33c879fb-3411-4a0b-8862-47c844d32b40 # Headline
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3ad99b2f-cf05-4f12-8b63-98e2a9cc7b30
+            uid: ac744fb7-8750-4062-a37a-33c6dc7a749a
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 5c4dce04-09b5-4782-8525-f9501e72fd30 # Headline
+            fieldUid: ef92d9a4-234c-4884-95d5-bf4cabf8efba # Rates Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 627e2b29-f608-4b25-b39d-482ee6ae9568
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 04fe3ac1-ed7d-4c8e-b9ab-a5b99c8e4df5 # Banner Link
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 0988c7f9-d5fb-4a15-bd25-efbc01b85368
+            uid: 6cc9a04c-c155-4226-b0c8-a1bd5cb1b061
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 96aa2bea-b662-4ec4-8200-dadf9d4cbf64
+        uid: e52df7dc-eced-4d99-b5fc-1caeb2d69711
         userCondition: null
 fields:
-  04fe3ac1-ed7d-4c8e-b9ab-a5b99c8e4df5: # Banner Link
-    columnSuffix: whfgeidm
+  33c879fb-3411-4a0b-8862-47c844d32b40: # Headline
+    columnSuffix: ayfwfiws
     contentColumnType: text
     fieldGroup: null
-    handle: bannerLink
-    instructions: 'Optional - turn the whole announcement banner into a link'
-    name: 'Banner Link'
+    handle: headline
+    instructions: 'The rates table is pulled from the individual accommodations pages and will show below this headline'
+    name: Headline
     searchable: false
     settings:
-      allowCustomText: false
-      allowTarget: true
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ef92d9a4-234c-4884-95d5-bf4cabf8efba: # Rates Link
+    columnSuffix: ekrflkgd
+    contentColumnType: text
+    fieldGroup: null
+    handle: ratesLink
+    instructions: null
+    name: 'Rates Link'
+    searchable: false
+    settings:
+      allowCustomText: true
+      allowTarget: false
       defaultText: null
       selectLinkText: ''
       types:
@@ -176,13 +183,7 @@ fields:
                   - ''
                 -
                   - sources
-                  -
-                    - 'section:0c9fc74f-f5c7-4b5f-8b80-8ea98aa0999e' # Accommodations
-                    - 'section:cd118c39-5937-4705-b0db-2cb2bb0b7e9b' # Courses
-                    - 'section:f02a0d8f-d625-405c-a782-87b045350b7f' # Dining
-                    - 'section:19d04551-214f-4e9b-9a5e-ff66d6fe1028' # News
-                    - singles
-                    - 'section:3dfade29-0d50-45dd-9bf0-0b0a2fed7406' # Utility Pages
+                  - '*'
                 -
                   - customSelectionLabel
                   - ''
@@ -208,7 +209,7 @@ fields:
               __assoc__:
                 -
                   - enabled
-                  - '1'
+                  - ''
                 -
                   - customLabel
                   - ''
@@ -240,38 +241,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: presseddigital\linkit\fields\LinkitField
-  5c4dce04-09b5-4782-8525-f9501e72fd30: # Headline
-    columnSuffix: null
-    contentColumnType: text
-    fieldGroup: null
-    handle: headline
-    instructions: null
-    name: Headline
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: false
-      columnType: text
-      initialRows: 4
-      multiline: false
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  47333271-0ec9-46c1-8a97-252f94aff32c: # Enabled
-    columnSuffix: null
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: enabledData
-    instructions: 'Turn the announcement on/off'
-    name: Enabled
-    searchable: true
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
+handle: accommodationsRatesTable
+name: 'Accommodations Rates Table'
+sortOrder: 1

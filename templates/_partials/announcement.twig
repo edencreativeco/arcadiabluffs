@@ -1,7 +1,6 @@
 {% set component =  {
   enabled: header.announcement.enabledData ?? null,
   headline: header.announcement.headline ?? 'Announcement',
-  text: header.announcement.text ?? null,
   link: header.announcement.bannerLink,
 } %}
 
@@ -14,11 +13,7 @@
 		<div class="c-announcement">
 	{% endif %}
 		<div class="c-announcement__headline">{{ component.headline }}</div>
-		{% if component.text|length %}
-			<div class="c-announcement__text">
-				{{ component.text }}
-			</div>
-		{% endif %}
+		
 	{% if linkEnabled %}
 		</a>
 	{% else %}

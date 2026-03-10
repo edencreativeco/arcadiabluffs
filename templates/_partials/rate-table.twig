@@ -1,0 +1,142 @@
+ {% set section = section is defined ? section : null %}
+{% set type = type is defined ? type : null %}
+
+{% set rateEntriesQuery = craft.entries()
+  .rateTable(':notempty:')
+%}
+
+{% if section %}
+  {% set rateEntriesQuery = rateEntriesQuery.section(section) %}
+{% endif %}
+
+{% if type %}
+  {% set rateEntriesQuery = rateEntriesQuery.type(type) %}
+{% endif %}
+
+{% if entry is defined and entry.id %}
+  {% set rateEntriesQuery = rateEntriesQuery.id('not ' ~ entry.id) %}
+{% endif %}
+
+{% set rateEntries = rateEntriesQuery.all() %}
+
+{% set addMarginTop = addMarginTop is defined ? addMarginTop : false %}
+
+
+<div class="o-wrapper" {% if addMarginTop %} style="margin-top:50px;"{% endif %}>
+ <h1 class="rates__pricing-headline">{{ (headline is defined and headline|length) ? headline : (entry.ratesHeadline|length ? entry.ratesHeadline : 'Rates') }}</h1>
+
+
+<section class="rates-table">
+  <div class="rates-table__tabs-wrap">
+    {# Mobile: Course dropdown #}
+    <div class="rates-table__course-select-wrap">
+      <select class="rates-table__course-select" aria-label="Select Course">
+        {% if entry is defined and entry.rateTable is defined and entry.rateTable and entry.rateTable.table is defined and entry.rateTable.table %}
+          <option value="current">{{ section == 'coursesStructure' ? entry.parent.title : entry.title }}</option>
+          {% for rateEntry in rateEntries %}
+            <option value="{{ loop.index }}">{{ section == 'coursesStructure' ? rateEntry.parent.title : rateEntry.title }}</option>
+          {% endfor %}
+        {% elseif rateEntries|length %}
+          <option value="current">{{ section == 'coursesStructure' ? rateEntries[0].parent.title : rateEntries[0].title }}</option>
+          {% for rateEntry in rateEntries|slice(1) %}
+            <option value="{{ loop.index }}">{{ section == 'coursesStructure' ? rateEntry.parent.title : rateEntry.title }}</option>
+          {% endfor %}
+        {% endif %}
+      </select>
+    </div>
+
+    {# Desktop: Tabs #}
+    <ul class="rates-table__tabs tabs">
+      {% if entry is defined and entry.rateTable is defined and entry.rateTable and entry.rateTable.table is defined and entry.rateTable.table %}
+        <li class="rates-table__tab tab">
+          <a href="#" data-tab="current" class="rates-table__link tabs__link active">{{ section == 'coursesStructure' ? entry.parent.title : entry.title }}</a>
+        </li>
+        {% for rateEntry in rateEntries %}
+          <li class="rates-table__tab tab">
+            <a href="#" data-tab="{{ loop.index }}" class="rates-table__link tabs__link">{{ section == 'coursesStructure' ? rateEntry.parent.title : rateEntry.title }}</a>
+          </li>
+        {% endfor %}
+      {% elseif rateEntries|length %}
+        <li class="rates-table__tab tab">
+          <a href="#" data-tab="current" class="rates-table__link tabs__link active">{{ section == 'coursesStructure' ? rateEntries[0].parent.title : rateEntries[0].title }}</a>
+        </li>
+        {% for rateEntry in rateEntries|slice(1) %}
+          <li class="rates-table__tab tab">
+            <a href="#" data-tab="{{ loop.index }}" class="rates-table__link tabs__link">{{ section == 'coursesStructure' ? rateEntry.parent.title : rateEntry.title }}</a>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+
+    {# Tab/Dropdown content: one per course #}
+    {% set allEntries = [] %}
+    {% if entry is defined and entry.rateTable is defined and entry.rateTable and entry.rateTable.table is defined and entry.rateTable.table %}
+      {% set allEntries = allEntries|merge([{ key: 'current', entry: entry }]) %}
+      {% for rateEntry in rateEntries %}
+        {% set allEntries = allEntries|merge([{ key: loop.index, entry: rateEntry }]) %}
+      {% endfor %}
+    {% elseif rateEntries|length %}
+      {% set allEntries = allEntries|merge([{ key: 'current', entry: rateEntries[0] }]) %}
+      {% for rateEntry in rateEntries|slice(1) %}
+        {% set allEntries = allEntries|merge([{ key: loop.index, entry: rateEntry }]) %}
+      {% endfor %}
+    {% endif %}
+
+    {% for tab in allEntries %}
+      <div data-content="{{ tab.key }}" class="tabs__content{% if loop.first %} active{% endif %}">
+        {# Mobile: Single column paging #}
+        <div class="rates-table__mobile-columns" data-mobile-columns>
+          <div class="rates-table__mobile-columns-inner">
+            <button class="rates-table__arrow rates-table__arrow--left" aria-label="Previous" data-mobile-prev><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <mask id="mask0_2264_929" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+    <rect x="3.8147e-06" y="1.74846e-06" width="20" height="20" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mask0_2264_929)">
+    <path d="M11.6665 14.7114L6.95508 9.99991L11.6665 5.28845L12.5447 6.16658L8.71133 9.99991L12.5447 13.8332L11.6665 14.7114Z" fill="white"/>
+  </g>
+</svg></button>
+            <span class="rates-table__mobile-columns-label" data-mobile-label></span>
+            <button class="rates-table__arrow rates-table__arrow--right" aria-label="Next" data-mobile-next><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <mask id="mask0_2249_721" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+    <rect x="20" y="20" width="20" height="20" transform="rotate(-180 20 20)" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mask0_2249_721)">
+    <path d="M8.33346 5.28863L13.0449 10.0001L8.33346 14.7115L7.45534 13.8334L11.2887 10.0001L7.45534 6.16676L8.33346 5.28863Z" fill="white"/>
+  </g>
+</svg></button>
+          </div>
+        </div>
+        <div class="rates-table__mobile-table" data-mobile-table>
+          {# JS will populate this #}
+        </div>
+        {# Desktop: Full table #}
+        <table class="rates-table__desktop-table">
+          <thead>
+            <tr>
+              {% for col in tab.entry.rateTable.columns %}
+                <th>{{ col.heading }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in tab.entry.rateTable.rows %}
+              <tr>
+                {% for cell in row %}
+                  <td>{{ cell }}</td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% if tab.entry.ratesFootnotes|length %}
+          <ul class="rates-table__footnotes">
+            {% for block in tab.entry.ratesFootnotes.type('footnote') %}
+              <li>{{ block.footnote }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+</div>

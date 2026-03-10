@@ -1,5 +1,5 @@
 fieldLayouts:
-  289ec723-62a2-4b4c-b6d9-d14702ce7039:
+  1085b272-80dc-4230-8df1-9d51376f6893:
     tabs:
       -
         elementCondition: null
@@ -27,69 +27,45 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 368f02f4-8ba4-41a3-a2c2-d3076b744a95
+            uid: 6b6a8128-5783-4719-85db-c778e2d1e458
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: dcb31393-3ea4-4a2a-a287-c79dfba31b0a # CTA Headline
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: cfa5e35f-992d-445f-b54f-a198af51d719
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 0d4713d1-5055-456d-b451-5eacbc986e7d # Banner Image / Video
+            fieldUid: 8ce047aa-818d-4f89-8b27-ee67e4018da1 # Navigation Link
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c762b9b6-4bd6-4b7e-92a9-1d6d0285234b
+            uid: 7547c4e3-45ba-4a88-8b72-38e72cf1df0d
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 9d60212d-d586-49a1-9525-1f94da3d85f0 # CTA Body
+            fieldUid: 0942620b-34cc-4de4-8e29-b884454cdf06 # Navigation Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c061a77c-ccf9-4852-8d2b-ffa8b99409a1
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 9432c02d-3660-469e-af4c-461baccc92ce # CTA Footer
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d00eb339-08e2-4b86-b50d-c6f3def0c213
+            uid: b8c1f4a6-6b25-4a1f-8331-fe7a560da293
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 463765c1-5523-4cda-bad5-85f1dc4e2739
+        uid: 8a21c76f-2291-45b3-895a-29796d0b23ab
         userCondition: null
-handle: ctas
-hasTitleField: true
-name: 'Call To Actions'
-section: 8d55db04-8897-450d-a5f2-625d80a8eab2 # Call To Actions
-showStatusField: true
+handle: default
+hasTitleField: false
+name: Default
+section: 91430bb0-e893-4ae9-961b-648284afcc92 # Main Navigation
+showStatusField: false
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 sortOrder: 1
-titleFormat: null
+titleFormat: '{navigationLink.text}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

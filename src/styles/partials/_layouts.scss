@@ -35,7 +35,7 @@
 
 // Rates and Gift Cards Template
 .main__course-rates {
-   @extend %wrapper;
+   // @extend %wrapper;
 }
 
 // Gift Cards
@@ -46,6 +46,13 @@
 
 .main__course-landing {
     @extend %lg-section;
+    background: $white
+}
+
+.main__course-rates {
+   //  @extend %md-section;
+   padding-top: $padding-content-md;
+    background: $white
 }
 
 // 404

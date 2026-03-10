@@ -45,7 +45,7 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 0d4713d1-5055-456d-b451-5eacbc986e7d # Banner Image
+            fieldUid: 0d4713d1-5055-456d-b451-5eacbc986e7d # Banner Image / Video
             instructions: null
             label: null
             required: true
