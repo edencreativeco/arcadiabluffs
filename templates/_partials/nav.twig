@@ -36,7 +36,7 @@
 				{% if hasChildren %}
 				<ul class="submenu">
 					{% if parentImage %}
-						{% set navImage = craft.imager.transformImage(parentImage, { width: 200, mode: 'fit' }) %}
+						{% set navImage = craft.imager.transformImage(parentImage, { width: 400, mode: 'fit' }) %}
 						<div class="submenu-image-wrap">
 							<img class="submenu-image" src="{{ navImage.url }}" alt="{{ parentImage.title }}" data-submenu-image="parent">
 						</div>
@@ -50,7 +50,7 @@
 					<li class="{{ childActive ? 'is-active' }}" data-submenu-index="{{ loop.index }}">
 						{{ child.navigationLink.link }}
 						{% if image %}
-							{% set navImage = craft.imager.transformImage(image, { width: 200, mode: 'fit' }) %}
+							{% set navImage = craft.imager.transformImage(image, { width: 400, mode: 'fit' }) %}
 							<div class="submenu-image-wrap">
 								<img class="submenu-image" src="{{ navImage.url }}" alt="{{ image.title }}" data-submenu-image="{{ loop.index }}">
 							</div>
