@@ -13,7 +13,7 @@ settings:
   columnType: text
   defaultTransform: null
   purifierConfig: null
-  purifyHtml: false
+  purifyHtml: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
   showWordCount: false

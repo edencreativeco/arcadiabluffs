@@ -7,5 +7,10 @@
     "pagebreak"
   ],
   "HTML.SafeIframe": true,
-  "URI.SafeIframeRegexp": "%^(https?:)?//(www.youtube.com/embed/|player.vimeo.com/video/)%"
+  "HTML.SafeScripting": ["https://platform.twitter.com/widgets.js"],
+  "URI.SafeIframeRegexp": "%^(https?:)?//(www.youtube.com/embed/|www.youtube.com/watch|www.youtu.be|player.vimeo.com/video/)%",
+
+
+  "HTML.SafeObject": true,
+  "Output.FlashCompat": true
 }

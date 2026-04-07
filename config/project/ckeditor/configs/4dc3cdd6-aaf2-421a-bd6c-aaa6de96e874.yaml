@@ -13,12 +13,16 @@ options:
       - right
   code:
     indentSequence: '  '
+  htmlEmbed:
+    showPreviews: true
   htmlSupport:
     allow:
       -
         attributes: true
         classes: true
         styles: true
+  mediaEmbed:
+    previewsInData: true
 toolbar:
   - heading
   - '|'

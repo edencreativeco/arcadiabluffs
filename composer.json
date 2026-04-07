@@ -1,17 +1,17 @@
 {
   "require": {
-    "craftcms/ckeditor": "3.14.1",
-    "craftcms/cms": "^4.0.0",
+    "craftcms/ckeditor": "3.15.0",
+    "craftcms/cms": "4.17.13",
     "craftcms/feed-me": "^5.14.0",
     "dolphiq/redirect": "2.0.1",
-    "nystudio107/craft-seomatic": "4.1.19",
+    "nystudio107/craft-seomatic": "4.1.20",
     "presseddigital/linkit": "4.0.4.1",
     "spacecatninja/imager-x": "4.5.3",
     "spicyweb/craft-neo": "4.4.7",
     "verbb/field-manager": "3.0.9",
-    "verbb/formie": "2.2.6",
+    "verbb/formie": "2.2.17",
     "verbb/super-table": "3.0.16",
-    "verbb/tablemaker": "^4.0",
+    "verbb/tablemaker": "4.0.18",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
