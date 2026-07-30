@@ -60,7 +60,9 @@
 								{% for member in row.executiveTeamRow %}
 									<li class="team__grid-item">
 										{% set memberHeadshot = member.headshot.one() %}
-										<img class="team__headshot" src="{{ memberHeadshot ? memberHeadshot.getUrl(headshot) : "" }}" alt="{{ member.teamMemberName }}">
+										{% if memberHeadshot %}
+											<img class="team__headshot" src="{{ memberHeadshot.getUrl(headshot) }}" alt="{{ member.teamMemberName }}">
+										{% endif %}
 										<h3 class="team__name">{{ member.teamMemberName }}</h3>
 										<p class="team__job-title">{{ member.jobTitle }}</p>
 										{% if member.email | length %}

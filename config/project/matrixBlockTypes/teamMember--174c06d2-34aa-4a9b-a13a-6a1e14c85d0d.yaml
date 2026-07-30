@@ -10,10 +10,10 @@ fieldLayouts:
             fieldUid: 8901e690-f63a-4540-a2f6-9b4d1f0f50a2 # Headshot
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2d11c02a-8e10-43f0-aec3-c46752ba1d3c
+            uid: 75486822-1cc3-495f-8164-0a2a0078b48c
             userCondition: null
             warning: null
             width: 100
@@ -25,7 +25,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c753d8bc-69d8-4e29-bf6f-a8ad8a06fa35
+            uid: 5677fc91-f65d-4bfd-a85a-b3d772fe640b
             userCondition: null
             warning: null
             width: 100
@@ -37,7 +37,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a796865b-899e-4364-9258-6814ed38bc4b
+            uid: a94c0478-85dd-415e-9a9a-32b9d7a54382
             userCondition: null
             warning: null
             width: 100
@@ -49,7 +49,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: e8ba983f-a67b-4de4-a020-509f23e34cd7
+            uid: 465db9af-b2b0-4976-9416-549c3c17ee49
             userCondition: null
             warning: null
             width: 100
