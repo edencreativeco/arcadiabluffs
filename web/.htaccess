@@ -1,6 +1,23 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # --- Block scanner probes before they reach PHP ---
+
+    # Any dotfile or dot-directory (.env, .git, .aws, .docker, etc.)
+    # except .well-known (needed for Let's Encrypt)
+    RewriteCond %{REQUEST_URI} !^/\.well-known/
+    RewriteRule (^|/)\. - [R=404,L]
+
+    # Common exploit paths that will never exist on this site
+    RewriteRule (^|/)(wp-admin|wp-content|wp-includes|wp-login\.php|xmlrpc\.php|wlwmanifest\.xml|autodiscover|phpinfo|info\.php|actuator|_profiler|cgi-bin|vendor/phpunit)($|/) - [R=404,NC,L]
+
+    # Any .php request other than /index.php
+    RewriteCond %{REQUEST_URI} !^/index\.php
+    RewriteRule \.php$ - [R=404,NC,L]
+
+    # Credential/config file extensions that have no business being URLs
+    RewriteRule \.(ya?ml|ini|log|sh|bak|sql|swp|env|boto|netrc|npmrc|s3cfg|dockercfg)$ - [R=404,NC,L]
+
     # Send would-be 404 requests to Craft
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
